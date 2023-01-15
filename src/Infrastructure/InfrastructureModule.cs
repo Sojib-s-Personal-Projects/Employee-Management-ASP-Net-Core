@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Infrastructure.DbContexts;
+using Infrastructure.Services;
 using Infrastructure.UnitOfWorks;
 
 namespace Infrastructure
@@ -28,6 +29,11 @@ namespace Infrastructure
 
             builder.RegisterType<ApplicationUnitOfWork>().As<IApplicationUnitOfWork>().InstancePerLifetimeScope();
 
+            builder.RegisterType<ApplicationUserManager>().AsSelf();
+
+            builder.RegisterType<ApplicationSignInManager>().AsSelf();
+
+            builder.RegisterType<ApplicationRoleManager>().AsSelf();
 
             base.Load(builder);
         }

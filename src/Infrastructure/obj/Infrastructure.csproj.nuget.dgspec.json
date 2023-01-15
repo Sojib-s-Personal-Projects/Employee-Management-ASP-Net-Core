@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Devskill\\Product Management\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\Devskill\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\Devskill\\Product Management\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Devskill\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Devskill\\Product Management\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Devskill\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\Devskill\\Product Management\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\Devskill\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\Devskill\\Product Management\\Product-Management\\src\\Infrastructure\\obj\\",
+        "outputPath": "D:\\Devskill\\Product-Management\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",

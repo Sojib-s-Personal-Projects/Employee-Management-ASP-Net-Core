@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3F44TRgGF4rhlU558YkPCBAS/uLMd5V+N1MRKMa4fofCZL9aUtjeVeuvSPlZTXiXaLHS3pzxdgDES78Z3ZdG0Q==",
+  "dgSpecHash": "0SEPlMInzW1kTTLQzOnMSJ9k5qxL0lt2UYbzAH+a/AYMFfUr6elT/AY4KYTknPt1FlhCJIUtQYwtAH5ElORiXg==",
   "success": true,
-  "projectFilePath": "D:\\Devskill\\Product Management\\Product-Management\\src\\ProductManagement.Web\\ProductManagement.Web.csproj",
+  "projectFilePath": "D:\\Devskill\\Product-Management\\src\\ProductManagement.Web\\ProductManagement.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
