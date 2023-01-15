@@ -306,3 +306,8 @@ D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\
 D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Infrastructure.dll
+D:\Devskill\Product Management\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Infrastructure.pdb
