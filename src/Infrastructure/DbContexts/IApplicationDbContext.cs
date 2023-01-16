@@ -5,6 +5,6 @@ namespace Infrastructure.DbContexts
 {
     public interface IApplicationDbContext
     {
-        //DbSet<Course> Courses { get; set; }
+       DbSet<Worker> Workers { get; set; }
     }
 }

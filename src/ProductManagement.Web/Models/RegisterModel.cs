@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using Autofac;
+using Infrastructure.Entities;
+using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductManagement.Web.Models
 {
-    public class RegisterModel
+    public class RegisterModel : BaseModel
     {
         [Required]
         [EmailAddress]
@@ -23,11 +27,12 @@ namespace ProductManagement.Web.Models
 
         [Required]
         public string Name { get; set; }
-
         public string? ReturnUrl { get; set; }
-
         public IList<AuthenticationScheme>? ExternalLogins { get; set; }
 
-
+        public override void ResolveDependency(ILifetimeScope scope)
+        {
+            base.ResolveDependency(scope);
+        }
     }
 }

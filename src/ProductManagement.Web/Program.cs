@@ -52,7 +52,7 @@ try
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
     {
         options.LoginPath = new PathString("/Account/Login");
-        options.AccessDeniedPath = new PathString("/Account/Login");
+        options.AccessDeniedPath = new PathString("/Account/AccessDenied");
         options.LogoutPath = new PathString("/Account/Logout");
         options.Cookie.Name = "FirstDemoPortal.Identity";
         options.SlidingExpiration = true;
@@ -112,7 +112,7 @@ try
 
     app.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+        pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}");
 
     app.Run();
 }

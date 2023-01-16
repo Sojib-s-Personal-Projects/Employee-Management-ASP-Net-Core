@@ -35,6 +35,8 @@ namespace Infrastructure
 
             builder.RegisterType<ApplicationRoleManager>().AsSelf();
 
+            builder.RegisterType<TimeService>().As<ITimeService>().InstancePerLifetimeScope();
+
             base.Load(builder);
         }
     }

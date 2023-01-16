@@ -33,7 +33,7 @@ namespace Infrastructure.DbContexts
             //modelBuilder.Entity<Topic>().ToTable("Topics");
             //modelBuilder.Entity<CourseRegistration>().ToTable("CourseRegistrations");
 
-            //modelBuilder.Entity<CourseRegistration>().HasKey(c => new { c.CourseId, c.StudentId });
+            modelBuilder.Entity<Worker>().HasKey(c => c.Roll);
 
             //modelBuilder.Entity<Course>()
             //    .HasMany(n => n.Topics)
@@ -58,7 +58,7 @@ namespace Infrastructure.DbContexts
 
             base.OnModelCreating(modelBuilder);
         }
-        //public DbSet<Course> Courses { get; set; }
+        public DbSet<Worker> Workers { get; set; }
         //public DbSet<Student> Students { get; set; }
         //public DbSet<Company> Companies { get; set; }
         //public DbSet<StockPrice> StockPrices { get; set; }
