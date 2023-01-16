@@ -21,7 +21,7 @@ namespace Infrastructure.DbContexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_connectionString,
+                optionsBuilder.UseMySQL(_connectionString,
                     b => b.MigrationsAssembly(_migrationAssemblyName)
                 );
             }

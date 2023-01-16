@@ -624,3 +624,13 @@ D:\Devskill\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\refint
 D:\Devskill\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\ProductManagement.Web.pdb
 D:\Devskill\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\ProductManagement.Web.genruntimeconfig.cache
 D:\Devskill\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\ref\ProductManagement.Web.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Google.Protobuf.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySql.Data.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\ZstdNet.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySqlConnector.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

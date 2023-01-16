@@ -36,7 +36,7 @@ try
 
 
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(connectionString, m => m.MigrationsAssembly(assemblyName)));
+        options.UseMySQL(connectionString, m => m.MigrationsAssembly(assemblyName)));
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -105,7 +105,6 @@ try
 
     app.UseAuthentication();
     app.UseAuthorization();
-
 
     app.MapControllerRoute(
     name: "areas",
