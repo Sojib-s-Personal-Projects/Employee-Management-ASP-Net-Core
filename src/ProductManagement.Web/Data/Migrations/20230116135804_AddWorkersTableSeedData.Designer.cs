@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ProductManagement.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230116114245_AddWorkersTable")]
-    partial class AddWorkersTable
+    [Migration("20230116135804_AddWorkersTableSeedData")]
+    partial class AddWorkersTableSeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -269,6 +269,138 @@ namespace ProductManagement.Web.Data.Migrations
                     b.HasKey("Roll");
 
                     b.ToTable("Workers");
+
+                    b.HasData(
+                        new
+                        {
+                            Roll = 11000001L,
+                            DateOfBirth = new DateTime(1992, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "ABDUL BATEN SARKER",
+                            Id = new Guid("13530e69-aeb3-4a44-b6a0-714546093fe7"),
+                            MothersName = "SALINA AKTER",
+                            Name = "MD ISRAFIL SORKER",
+                            PermanentDistrict = "Munshiganj",
+                            PostName = "Stenographer-Cum-Computer Operator",
+                            Quota = "Ansar-VDP",
+                            User = "11LQWESM"
+                        },
+                        new
+                        {
+                            Roll = 11000002L,
+                            DateOfBirth = new DateTime(1993, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "MD. ABDUL GONI",
+                            Id = new Guid("2fa3a5d2-c1f9-48a8-9ce4-cc05c3b739ae"),
+                            MothersName = "HASINA AKTHER",
+                            Name = "SYFUL ISLAM",
+                            PermanentDistrict = "Kishorganj",
+                            PostName = "Stenographer-Cum-Computer Operator",
+                            Quota = "Physically Handicapped",
+                            User = "146DK6YZ"
+                        },
+                        new
+                        {
+                            Roll = 11000003L,
+                            DateOfBirth = new DateTime(1996, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "MD ALIMUDDIN MOLLA",
+                            Id = new Guid("9fc6abea-0d6d-4168-b147-549f2a64a174"),
+                            MothersName = "SEFALI BEGUM",
+                            Name = "SUJAN",
+                            PermanentDistrict = "Rajbari",
+                            PostName = "Stenographer-Cum-Computer Operator",
+                            Quota = "Non Quota",
+                            User = "16ZHEPC4"
+                        },
+                        new
+                        {
+                            Roll = 11000004L,
+                            DateOfBirth = new DateTime(1994, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "MD. ENAMUL HAQUE KHAN",
+                            Id = new Guid("da27fb57-9979-4ecc-baaa-d329663d84c4"),
+                            MothersName = "RINA BEGUM",
+                            Name = "SUBARNA AKHTER",
+                            PermanentDistrict = "Gopalganj",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Non Quota",
+                            User = "1718Q6MA"
+                        },
+                        new
+                        {
+                            Roll = 11000005L,
+                            DateOfBirth = new DateTime(1991, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "LIAKOT ALI",
+                            Id = new Guid("13bdc36d-4439-4973-86bd-3297ea07b83d"),
+                            MothersName = "RASIDA BEGUM",
+                            Name = "LUTFOR RAHMAN",
+                            PermanentDistrict = " Rajbari",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Ansar-VDP",
+                            User = "17NUT467"
+                        },
+                        new
+                        {
+                            Roll = 11000006L,
+                            DateOfBirth = new DateTime(1991, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "MD. NAOSHADUL HAQUE",
+                            Id = new Guid("28923949-c440-42e5-a0ce-d223ca37b09c"),
+                            MothersName = "MOST. KHALEDA BIBI",
+                            Name = "MOST. MAHBUBA KHANOM",
+                            PermanentDistrict = "Naogaon",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Non Quota",
+                            User = "1BATJVHD"
+                        },
+                        new
+                        {
+                            Roll = 11000007L,
+                            DateOfBirth = new DateTime(1992, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "NARAYAN CHANDRA SARKAR",
+                            Id = new Guid("f0c01180-6812-408d-ac9f-f062afd88b42"),
+                            MothersName = "NANDA RANI SARKAR",
+                            Name = "KRISHNO KUMAR SARKAR",
+                            PermanentDistrict = "Bogura",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Non Quota",
+                            User = "1F26E9FU"
+                        },
+                        new
+                        {
+                            Roll = 11000008L,
+                            DateOfBirth = new DateTime(1992, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "NARAYAN KUMAR DAS",
+                            Id = new Guid("84b84d3f-6502-4f0a-8987-ae0a25f851f0"),
+                            MothersName = "BASONA RANI DAS",
+                            Name = "PROSENJIT KUMAR DAS",
+                            PermanentDistrict = "Khulna",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Non Quota",
+                            User = "1EV6P37Z"
+                        },
+                        new
+                        {
+                            Roll = 11000009L,
+                            DateOfBirth = new DateTime(1990, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "MD. MOYEN UDDIN",
+                            Id = new Guid("be8fe95c-6556-4bc4-b0fe-d604485d1655"),
+                            MothersName = "SHUKHZAN KHATUN",
+                            Name = "MD. TAREK AZIZ",
+                            PermanentDistrict = "Kushtia",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Child of Freedom Fighter",
+                            User = "11LQWESM"
+                        },
+                        new
+                        {
+                            Roll = 11000010L,
+                            DateOfBirth = new DateTime(1990, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FathersName = "MONORANJAN KUNDO",
+                            Id = new Guid("c1b2e030-a264-4d50-814b-2bcba273efe0"),
+                            MothersName = "ANJANA KUNDO",
+                            Name = "ANOUP KUNDO",
+                            PermanentDistrict = "Manikganj",
+                            PostName = "Stenographer-Cum-Computer Operator ",
+                            Quota = "Non Quota",
+                            User = "1JXCS1TV"
+                        });
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.ApplicationRoleClaim", b =>

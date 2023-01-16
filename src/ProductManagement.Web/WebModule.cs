@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ProductManagement.Web.Areas.Admin.Models;
 using ProductManagement.Web.Models;
 
 namespace ProductManagement.Web
@@ -10,6 +11,8 @@ namespace ProductManagement.Web
             builder.RegisterType<RegisterModel>().AsSelf();
 
             builder.RegisterType<LoginModel>().AsSelf();
+
+            builder.RegisterType<WorkerListModel>().AsSelf();
 
             base.Load(builder);
         }

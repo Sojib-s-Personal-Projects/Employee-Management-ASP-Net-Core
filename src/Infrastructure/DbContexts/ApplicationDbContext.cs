@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Entities;
+using Infrastructure.Seeds;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,8 +34,6 @@ namespace Infrastructure.DbContexts
             //modelBuilder.Entity<Topic>().ToTable("Topics");
             //modelBuilder.Entity<CourseRegistration>().ToTable("CourseRegistrations");
 
-            modelBuilder.Entity<Worker>().HasKey(c => c.Roll);
-
             //modelBuilder.Entity<Course>()
             //    .HasMany(n => n.Topics)
             //    .WithOne(a => a.Course)
@@ -55,6 +54,11 @@ namespace Infrastructure.DbContexts
             //    .WithOne(n => n.Company)
             //    .IsRequired()
             //    .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Worker>()
+                .HasKey(w => w.Roll);
+
+            modelBuilder.Entity<Worker>()
+                .HasData(new WorkerSeed().Workers);
 
             base.OnModelCreating(modelBuilder);
         }

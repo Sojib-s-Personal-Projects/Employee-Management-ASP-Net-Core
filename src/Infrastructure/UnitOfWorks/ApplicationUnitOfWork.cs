@@ -11,17 +11,12 @@ namespace Infrastructure.UnitOfWorks
 {
     public class ApplicationUnitOfWork : UnitOfWork, IApplicationUnitOfWork
     {
-        //public ICourseRepository Courses { get; private set; }
-        //public ICompanyRepository Companies { get; private set; }
-        //public IStockPriceRepository StockPrice { get; private set; }
+        public IWorkerRepository Workers { get; private set; }
 
-        public ApplicationUnitOfWork(IApplicationDbContext dbContext
-            //ICourseRepository courseRepository,
-           /* ICompanyRepository companyRepository, IStockPriceRepository stockPriceRepository*/) : base((DbContext)dbContext)
+        public ApplicationUnitOfWork(IApplicationDbContext dbContext, IWorkerRepository workerRepository
+            ) : base((DbContext)dbContext)
         {
-            //Courses = courseRepository;
-            //Companies = companyRepository;
-            //StockPrice = stockPriceRepository;
+            Workers = workerRepository;
         }
     }
 }
