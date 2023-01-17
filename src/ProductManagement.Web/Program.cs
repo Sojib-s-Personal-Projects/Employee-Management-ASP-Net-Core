@@ -19,12 +19,13 @@ try
 
     // Add services to the container.
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    var serverVersion = ServerVersion.AutoDetect(connectionString);
     var assemblyName = Assembly.GetExecutingAssembly().FullName;
 
     builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
     builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => {
         containerBuilder.RegisterModule(new WebModule());
-        containerBuilder.RegisterModule(new InfrastructureModule(connectionString,
+        containerBuilder.RegisterModule(new InfrastructureModule(connectionString,serverVersion,
             assemblyName));
     });
 
@@ -36,7 +37,7 @@ try
 
 
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseMySQL(connectionString, m => m.MigrationsAssembly(assemblyName)));
+        options.UseMySql(connectionString,serverVersion,m => m.MigrationsAssembly(assemblyName)));
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

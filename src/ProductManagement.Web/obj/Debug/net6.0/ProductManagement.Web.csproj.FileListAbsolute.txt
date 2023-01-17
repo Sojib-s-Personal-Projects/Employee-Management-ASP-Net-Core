@@ -632,5 +632,6 @@ D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySql.
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\ZstdNet.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySql.EntityFrameworkCore.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySqlConnector.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

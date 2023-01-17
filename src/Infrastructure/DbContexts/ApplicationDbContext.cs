@@ -10,10 +10,12 @@ namespace Infrastructure.DbContexts
     {
         private readonly string _connectionString;
         private readonly string _migrationAssemblyName;
+        private readonly ServerVersion _serverVersion;
 
-        public ApplicationDbContext(string connectionString, string migrationAssemblyName)
+        public ApplicationDbContext(string connectionString,ServerVersion serverVersion, string migrationAssemblyName)
         {
             _connectionString = connectionString;
+            _serverVersion = serverVersion;
             _migrationAssemblyName = migrationAssemblyName;
         }
 
@@ -21,7 +23,7 @@ namespace Infrastructure.DbContexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL(_connectionString,
+                optionsBuilder.UseMySql(_connectionString,_serverVersion,
                     b => b.MigrationsAssembly(_migrationAssemblyName)
                 );
             }
