@@ -1,0 +1,43 @@
+﻿@model WorkerInfoModel
+@{
+    ViewData["Title"] = "Insert Price";
+}
+<div class="container-fluid">
+    <div class="row pt-3 d-flex justify-content-center">
+        <div class="col-8">
+
+            <!-- Change Password Form -->
+            <form asp-antiforgery="true" asp-area="Admin" asp-controller="Home" asp-action="InsertPrice" method="post">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h1>Barcodes has been scanned for user @Model.Roll</h1>
+                        <h2>You can insert the price</h2>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" asp-for="Roll">
+                        <input type="hidden" asp-for="Id">
+                        <input type="hidden" asp-for="Worker">
+                        <input type="hidden" asp-for="BarCode1">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>
+                                    <label asp-for="Price" class="col-form-label">Enter the price</label>
+                                </td>
+                                <td>
+                                    <input type="text" asp-for="Price" class="form-control" id="Price" placeholder="Please enter the price" value="">
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -16,6 +16,8 @@ namespace ProductManagement.Web.Areas.Admin.Models
 
         [Required]
         public string BarCode2 { get; set; }
+
+        [Required]
         public double? Price { get; set; } = null;
         public long Roll { get; set; }
         public Worker Worker { get; set; }
@@ -47,10 +49,10 @@ namespace ProductManagement.Web.Areas.Admin.Models
 
         public async Task InserData()
         {
-            //var model = _mapper.Map<WorkerInfo>(this);
             var model = new WorkerInfo();
+            model.BarCodeData = BarCode1;
             model.Roll = Roll;
-            model.BarCodeData=BarCode1;
+
             await _workerInfoService.InsertData(model);
         }
 
@@ -59,6 +61,32 @@ namespace ProductManagement.Web.Areas.Admin.Models
             if(BarCode1!=BarCode2)
                 return false;
             return true;
+        }
+
+        public async Task<WorkerInfo> GetWorkerInformationRoll(long roll)
+        {
+            return await _workerInfoService.GetWorkerInformationByRoll(roll);
+        }
+
+        public async Task LoadData(long roll)
+        {
+            var workerInfo = await _workerInfoService.GetWorkerInformationByRoll(roll);
+            if (workerInfo != null)
+            {
+                _mapper.Map(workerInfo, this);
+            }
+        }
+
+        public void InserPrice()
+        {
+            var model = new WorkerInfo();
+            model.Roll = Roll;
+            model.BarCodeData = BarCode1;
+            model.Price = Price;
+            model.Id = Id;
+            model.Worker = Worker;
+
+            _workerInfoService.InsertPrice(model);
         }
     }
 }

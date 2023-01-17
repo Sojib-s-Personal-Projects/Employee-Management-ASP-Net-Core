@@ -10,8 +10,8 @@ namespace Infrastructure.BusinessObjects
     {
         public Guid Id { get; set; }
         public string BarCodeData { get; set; }
-        public double? Price { get; set; }
-        public long Roll { get; set; }
         public Worker Worker { get; set; }
+        public long Roll { get; set; }
+        public double? Price { get; set; }
     }
 }

@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/InsertPrice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbnNlcnRQcmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/UpdateDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxVcGRhdGVEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

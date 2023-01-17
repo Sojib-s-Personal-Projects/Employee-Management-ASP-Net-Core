@@ -31,6 +31,14 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             var model = _scope.Resolve<WorkerInfoModel>();
             await model.StoreRoll(id);
 
+            var WorkerInformation = await model.GetWorkerInformationRoll(id);
+            
+            if (WorkerInformation != null)
+            {
+                return RedirectToAction(nameof(InsertPrice), new { id =WorkerInformation.Roll });
+            }
+
+
             return View(model);
         }
 
@@ -83,6 +91,46 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
                 TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
                 {
                     Message = "There was a problem in updating details.",
+                    Type = ResponseTypes.Danger
+                });
+            }
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> InsertPrice(long id)
+        {
+            var model = _scope.Resolve<WorkerInfoModel>();
+
+            await model.LoadData(id);
+
+            return View(model);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> InsertPrice(WorkerInfoModel model)
+        {
+            try
+            {
+                model.ResolveDependency(_scope);
+
+                model.InserPrice();
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = "Successfully Inserted Price.",
+                    Type = ResponseTypes.Success
+                });
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = "There was a problem in inserting price.",
                     Type = ResponseTypes.Danger
                 });
             }

@@ -29,10 +29,10 @@ namespace Infrastructure
                  .InstancePerLifetimeScope();
 
             builder.RegisterType<ApplicationDbContext>().As<IApplicationDbContext>()
-            .WithParameter("connectionString", _connectionString)
-            .WithParameter("serverVersion", _serverVersion)
-            .WithParameter("migrationAssemblyName", _migrationAssemblyName)
-            .InstancePerLifetimeScope();
+                .WithParameter("connectionString", _connectionString)
+                .WithParameter("serverVersion", _serverVersion)
+                .WithParameter("migrationAssemblyName", _migrationAssemblyName)
+                .InstancePerLifetimeScope();
 
             builder.RegisterType<ApplicationUnitOfWork>().As<IApplicationUnitOfWork>().InstancePerLifetimeScope();
 

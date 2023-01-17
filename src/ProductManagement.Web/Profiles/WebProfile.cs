@@ -2,7 +2,7 @@ using AutoMapper;
 using Infrastructure.BusinessObjects;
 using ProductManagement.Web.Areas.Admin.Models;
 
-namespace DevTrack.Web.Profiles
+namespace ProductManagement.Web.Profiles
 {
     public class WebProfile : Profile
     {
@@ -12,6 +12,11 @@ namespace DevTrack.Web.Profiles
                 .ForMember(x => x.BarCode2, opt => opt.Ignore())
                 .ForMember(dest => dest.BarCode1, src => src.MapFrom(x => x.BarCodeData))
                 .ReverseMap();
+
+            CreateMap<WorkerInfoModel,WorkerInfo>()
+                .ForMember(dest => dest.BarCodeData, src => src.MapFrom(x => x.BarCode1))
+                .ReverseMap();
+           
 
             //CreateMap<UpdatePassword, PasswordEditModel>()
             //    .ReverseMap();

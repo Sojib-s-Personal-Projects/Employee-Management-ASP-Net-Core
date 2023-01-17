@@ -1,13 +1,6 @@
 ﻿using AutoMapper;
-using Infrastructure.BusinessObjects;
-using Infrastructure.DbContexts;
 using Infrastructure.Exceptions;
 using Infrastructure.UnitOfWorks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorkerInfoBO = Infrastructure.BusinessObjects.WorkerInfo;
 using WorkerInfoEO = Infrastructure.Entities.WorkerInfo;
 
@@ -22,6 +15,13 @@ namespace Infrastructure.Services
         {
             _applicationUnitOfWork = applicationUnitOfWork;
             _mapper = mapper;
+        }
+
+        public async Task<WorkerInfoBO> GetWorkerInformationByRoll(long roll)
+        {
+            var workerInfoEO= _applicationUnitOfWork.WorkersInformation.Get(x=>x.Roll==roll && x.BarCodeData!=null,"Worker").FirstOrDefault();
+            var workerInfoBO=_mapper.Map<WorkerInfoBO>(workerInfoEO);
+            return workerInfoBO;
         }
 
         public async Task InsertData(WorkerInfoBO model)
@@ -39,6 +39,13 @@ namespace Infrastructure.Services
             _applicationUnitOfWork.WorkersInformation.Add(workerInfoEO);
             _applicationUnitOfWork.Save();
 
+        }
+
+        public void InsertPrice(WorkerInfoBO workerInfoBO)
+        {
+            var workerInfoEO = _applicationUnitOfWork.WorkersInformation.Get(x=>x.Roll== workerInfoBO.Roll,"Worker").FirstOrDefault();
+            workerInfoEO.Price = workerInfoBO.Price;
+            _applicationUnitOfWork.Save();
         }
     }
 }
