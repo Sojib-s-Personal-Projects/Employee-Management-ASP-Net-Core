@@ -22,10 +22,10 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View();
         }
 
-        //public async Task<IActionResult> Insert()
-        //{
-        //    return View();
-        //}
+        public async Task<IActionResult> UpdateDetails(long id)
+        {
+            return View();
+        }
         public JsonResult GetWorkerData()
         {
             var dataTableModel = new DataTablesAjaxRequestModel(Request);

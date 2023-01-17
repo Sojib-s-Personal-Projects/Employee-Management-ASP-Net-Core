@@ -65,6 +65,7 @@ namespace Infrastructure.DbContexts
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Worker> Workers { get; set; }
+        public DbSet<WorkerInfo> WorkersInformation { get; set; }
         //public DbSet<Student> Students { get; set; }
         //public DbSet<Company> Companies { get; set; }
         //public DbSet<StockPrice> StockPrices { get; set; }

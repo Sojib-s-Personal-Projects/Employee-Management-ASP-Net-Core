@@ -6,5 +6,6 @@ namespace Infrastructure.DbContexts
     public interface IApplicationDbContext
     {
        DbSet<Worker> Workers { get; set; }
+       DbSet<WorkerInfo> WorkersInformation { get; set; }
     }
 }

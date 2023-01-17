@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProductManagement.Web;
-using ProductManagement.Web.Data;
+//using ProductManagement.Web.Data;
 using Serilog;
 using Serilog.Events;
 using System.Reflection;

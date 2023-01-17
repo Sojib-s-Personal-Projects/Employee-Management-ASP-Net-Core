@@ -48,6 +48,14 @@
                 "ajax": {
                     "url": "/admin/home/GetWorkerData",
                 },
+                "columnDefs": [
+                    {
+                        targets: 0,
+                        render: function (data, type, row) {
+                            return `<a href="/Admin/Home/UpdateDetails/${row[0]}">${data}</a>`;
+                        }
+                    }
+                ]
             });
         });
     </script>
