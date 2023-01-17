@@ -1,31 +1,42 @@
-﻿<div class="container-fluid">
-    <div class="row pt-3">
+﻿@model WorkerInfoModel
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container-fluid">
+    <div class="row pt-3 d-flex justify-content-center">
         <div class="col-8">
+            
             <!-- Change Password Form -->
-            <form>
+            <form asp-antiforgery="true" asp-area="Admin" asp-controller="Home" asp-action="UpdateDetails" method="post">
                 <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h1>Scan the barcodes for Worker @Model.Roll</h1>
+                    </div>
                     <div class="card-body">
+                        <input type="hidden" asp-for="Roll">
                         <table class="table table-borderless">
                             <tr>
                                 <td>
-                                    <label for="inputPassword" class="col-form-label">Scan the first bar code</label>
+                                    <label asp-for="BarCode1" class="col-form-label">Scan the first bar code</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" id="barCode1" placeholder="Please scan the first bar code" value="">
+                                    <input type="text" asp-for="BarCode1" class="form-control" id="barCode1" placeholder="Please scan the first bar code" value="">
+                                    <span asp-validation-for="BarCode1" class="text-danger"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="inputNewPassword" class="col-form-label">Scan the second bar code</label>
+                                    <label asp-for="BarCode2" class="col-form-label">Scan the second bar code</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" id="barCode2" placeholder="Please scan the second bar code" value="">
+                                    <input type="text" asp-for="BarCode2" class="form-control" id="barCode2" placeholder="Please scan the second bar code" value="">
+                                    <span asp-validation-for="BarCode2" class="text-danger"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>
-                                    <a class="btn btn-primary btn-block" type="submit">Submit</a>
+                                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
                                 </td>
                             </tr>
                         </table>

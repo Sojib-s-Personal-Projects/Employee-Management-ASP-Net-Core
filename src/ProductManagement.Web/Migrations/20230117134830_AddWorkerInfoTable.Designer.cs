@@ -3,6 +3,7 @@ using System;
 using Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ProductManagement.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230117134830_AddWorkerInfoTable")]
+    partial class AddWorkerInfoTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -400,16 +402,14 @@ namespace ProductManagement.Web.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<double?>("Price")
                         .HasColumnType("double");
 
-                    b.Property<long>("Roll")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Roll")
-                        .IsUnique();
 
                     b.ToTable("WorkersInformation");
                 });
@@ -462,23 +462,6 @@ namespace ProductManagement.Web.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Infrastructure.Entities.WorkerInfo", b =>
-                {
-                    b.HasOne("Infrastructure.Entities.Worker", "Worker")
-                        .WithOne("WorkerInfo")
-                        .HasForeignKey("Infrastructure.Entities.WorkerInfo", "Roll")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Worker");
-                });
-
-            modelBuilder.Entity("Infrastructure.Entities.Worker", b =>
-                {
-                    b.Navigation("WorkerInfo")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

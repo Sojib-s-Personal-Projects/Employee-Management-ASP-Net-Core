@@ -10,7 +10,8 @@ namespace Infrastructure.Entities
     {
         public Guid Id { get; set; }
         public string BarCodeData { get; set; }
-        public string Image { get; set; }
-        public double? Price { get; set; } = null;
+        public Worker Worker { get; set; }
+        public long Roll { get; set; }
+        public double? Price { get; set; }
     }
 }

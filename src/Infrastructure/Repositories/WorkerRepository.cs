@@ -17,7 +17,7 @@ namespace Infrastructure.Repositories
     int pageSize, string searchText, string orderby)
         {
             (IList<Worker> data, int total, int totalDisplay) results =
-                GetDynamic(x => x.Roll.ToString().Contains(searchText), orderby,
+                Get(x => x.Roll.ToString().Contains(searchText) || x.Name.Contains(searchText), null,
                 "", pageIndex, pageSize, true);
 
             return results;

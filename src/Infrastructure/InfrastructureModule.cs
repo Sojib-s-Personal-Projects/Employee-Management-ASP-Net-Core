@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Infrastructure.BusinessObjects;
 using Infrastructure.DbContexts;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
@@ -46,6 +47,10 @@ namespace Infrastructure
             builder.RegisterType<WorkerRepository>().As<IWorkerRepository>().InstancePerLifetimeScope();
 
             builder.RegisterType<WorkerService>().As<IWorkerService>().InstancePerLifetimeScope();
+
+            builder.RegisterType<WorkerInfoRepository>().As<IWorkerInfoRepository>().InstancePerLifetimeScope();
+
+            builder.RegisterType<WorkerInfoService>().As<IWorkerInfoService>().InstancePerLifetimeScope();
 
             base.Load(builder);
         }

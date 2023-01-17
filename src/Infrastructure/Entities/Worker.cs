@@ -18,5 +18,6 @@ namespace Infrastructure.Entities
         public DateTime DateOfBirth { get; set; }
         public string PermanentDistrict { get; set; }
         public string Quota { get; set; }
+        public WorkerInfo WorkerInfo { get; set; }
     }
 }

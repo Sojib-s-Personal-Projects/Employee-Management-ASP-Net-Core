@@ -1,4 +1,6 @@
 using AutoMapper;
+using WorkerInfoBO = Infrastructure.BusinessObjects.WorkerInfo;
+using WorkerInfoEO = Infrastructure.Entities.WorkerInfo;
 
 namespace Infrastructure.Profiles
 {
@@ -16,8 +18,8 @@ namespace Infrastructure.Profiles
             //CreateMap<ProjectEO, Project>()
             //    .ReverseMap();
 
-            //CreateMap<ProjectUserEO, ProjectUser>()
-            //   .ReverseMap();
+            CreateMap<WorkerInfoBO, WorkerInfoEO>()
+               .ReverseMap();
 
             //CreateMap<ActivityEO, ActivityBO>()
             //   .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.ApplicationUserId))

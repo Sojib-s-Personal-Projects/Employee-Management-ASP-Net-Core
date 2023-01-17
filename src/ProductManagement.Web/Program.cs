@@ -39,6 +39,7 @@ try
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseMySql(connectionString,serverVersion,m => m.MigrationsAssembly(assemblyName)));
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
     builder.Services

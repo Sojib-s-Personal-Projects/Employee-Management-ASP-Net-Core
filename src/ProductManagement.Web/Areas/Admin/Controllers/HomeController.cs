@@ -1,8 +1,12 @@
 ﻿using Autofac;
+using Infrastructure.Exceptions;
+using Infrastructure.Enum;
+using Infrastructure.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductManagement.Web.Areas.Admin.Models;
 using ProductManagement.Web.Models;
+using System.Security.Authentication;
 
 namespace ProductManagement.Web.Areas.Admin.Controllers
 {
@@ -24,9 +28,69 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> UpdateDetails(long id)
         {
-            return View();
+            var model = _scope.Resolve<WorkerInfoModel>();
+            await model.StoreRoll(id);
+
+            return View(model);
         }
-        public JsonResult GetWorkerData()
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateDetails(WorkerInfoModel model)
+        {
+            try
+            {
+                model.ResolveDependency(_scope);
+                bool sameBarCode = await model.CheckForSameBarcode();
+                if (!sameBarCode)
+                {
+                    throw new ValueNotMatchingException("The Bar Codes Don't Match");
+                }
+
+                await model.InserData();
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = "Successfully Inserted Data.",
+                    Type = ResponseTypes.Success
+                });
+
+                return View(model);
+            }
+            catch (ValueNotMatchingException ioe)
+            {
+                _logger.LogError(ioe, ioe.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = ioe.Message,
+                    Type = ResponseTypes.Danger
+                });
+            }
+            catch (DataExistsException ioe)
+            {
+                _logger.LogError(ioe, ioe.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = ioe.Message,
+                    Type = ResponseTypes.Danger
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = "There was a problem in updating details.",
+                    Type = ResponseTypes.Danger
+                });
+            }
+
+            return View(model);
+        }
+
+        public async Task<JsonResult> GetWorkerData()
         {
             var dataTableModel = new DataTablesAjaxRequestModel(Request);
             var model = _scope.Resolve<WorkerListModel>();

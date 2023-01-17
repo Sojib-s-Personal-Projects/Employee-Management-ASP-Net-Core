@@ -19,14 +19,14 @@ namespace ProductManagement.Web.Areas.Admin.Models
             _workerService = _scope.Resolve<IWorkerService>();
         }
 
-        internal object? GetPagedWorkers(DataTablesAjaxRequestModel model)
+        public object? GetPagedWorkers(DataTablesAjaxRequestModel model)
 		{
             
             var data = _workerService.GetWorkers(
                 model.PageIndex,
                 model.PageSize,
                 model.SearchText,
-                model.GetSortText(new string[] { "Roll", "User", "Name", "FathersName", "MothersName", "PostName", "DateOfBirth", "PermanentDistrict", "Quota", }));
+                model.GetSortText(new string[] { "Roll", /*"User", "Name", "FathersName", "MothersName", "PostName", "DateOfBirth", "PermanentDistrict", "Quota",*/"Id" }));
 
             return new
             {
@@ -36,14 +36,14 @@ namespace ProductManagement.Web.Areas.Admin.Models
                         select new string[]
                         {
                                 record.Roll.ToString(),
-                                record.User,
-                                record.Name,
-                                record.FathersName,
-                                record.MothersName,
-                                record.PostName,
-                                record.DateOfBirth.ToString(),
-                                record.PermanentDistrict,
-                                record.Quota,
+                                //record.User,
+                                //record.Name,
+                                //record.FathersName,
+                                //record.MothersName,
+                                //record.PostName,
+                                //record.DateOfBirth.ToString(),
+                                //record.PermanentDistrict,
+                                //record.Quota,
                                 record.Id.ToString()
                         }
                     ).ToArray()

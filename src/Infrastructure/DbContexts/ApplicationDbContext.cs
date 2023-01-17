@@ -2,6 +2,7 @@
 using Infrastructure.Seeds;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace Infrastructure.DbContexts
 {
@@ -62,13 +63,14 @@ namespace Infrastructure.DbContexts
             modelBuilder.Entity<Worker>()
                 .HasData(new WorkerSeed().Workers);
 
+            modelBuilder.Entity<WorkerInfo>()
+            .HasOne<Worker>(s => s.Worker)
+            .WithOne(ad=>ad.WorkerInfo)
+            .HasForeignKey<WorkerInfo>(ad => ad.Roll);
+
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<WorkerInfo> WorkersInformation { get; set; }
-        //public DbSet<Student> Students { get; set; }
-        //public DbSet<Company> Companies { get; set; }
-        //public DbSet<StockPrice> StockPrices { get; set; }
-
     }
 }
