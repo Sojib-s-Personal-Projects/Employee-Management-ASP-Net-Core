@@ -1,12 +1,10 @@
 ﻿using Autofac;
-using Infrastructure.Exceptions;
 using Infrastructure.Enum;
+using Infrastructure.Exceptions;
 using Infrastructure.Extensions;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductManagement.Web.Areas.Admin.Models;
 using ProductManagement.Web.Models;
-using System.Security.Authentication;
 
 namespace ProductManagement.Web.Areas.Admin.Controllers
 {
@@ -26,18 +24,15 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Price()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> UpdateDetails(long id)
         {
             var model = _scope.Resolve<WorkerInfoModel>();
             await model.StoreRoll(id);
-
-            var WorkerInformation = await model.GetWorkerInformationRoll(id);
-            
-            if (WorkerInformation != null)
-            {
-                return RedirectToAction(nameof(InsertPrice), new { id =WorkerInformation.Roll });
-            }
-
 
             return View(model);
         }
@@ -98,7 +93,7 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> InsertPrice(long id)
+        public async Task<IActionResult> InsertPrice(string id)
         {
             var model = _scope.Resolve<WorkerInfoModel>();
 
@@ -143,6 +138,13 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             var dataTableModel = new DataTablesAjaxRequestModel(Request);
             var model = _scope.Resolve<WorkerListModel>();
             return Json(model.GetPagedWorkers(dataTableModel));
+        }
+
+        public async Task<JsonResult> GetWorkersInformationData()
+        {
+            var dataTableModel = new DataTablesAjaxRequestModel(Request);
+            var model = _scope.Resolve<WorkerInfoListModel>();
+            return Json(model.GetPagedWorkersInforamation(dataTableModel));
         }
     }
 }

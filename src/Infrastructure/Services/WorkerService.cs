@@ -16,7 +16,7 @@ namespace Infrastructure.Services
         private readonly IApplicationUnitOfWork _applicationUnitOfWork;
         private readonly IMapper _mapper;
 
-        public WorkerService(IApplicationUnitOfWork applicationUnitOfWork,IMapper mapper)
+        public WorkerService(IApplicationUnitOfWork applicationUnitOfWork, IMapper mapper)
         {
             _applicationUnitOfWork = applicationUnitOfWork;
             _mapper = mapper;
@@ -31,21 +31,25 @@ namespace Infrastructure.Services
             IList<WorkerBO> workers = new List<WorkerBO>();
             foreach (WorkerEO workerEO in results.data)
             {
-                workers.Add(new WorkerBO
+                if (workerEO.WorkerInfo == null)
                 {
-                    Id= workerEO.Id,
-                    Name= workerEO.Name,
-                    FathersName= workerEO.FathersName,
-                    MothersName= workerEO.MothersName,
-                    Roll= workerEO.Roll,
-                    User= workerEO.User,
-                    PermanentDistrict= workerEO.PermanentDistrict,
-                    PostName= workerEO.PostName,
-                    Quota= workerEO.Quota,
-                    DateOfBirth= workerEO.DateOfBirth
-                });
+                    workers.Add(new WorkerBO
+                    {
+                        Id = workerEO.Id,
+                        Name = workerEO.Name,
+                        FathersName = workerEO.FathersName,
+                        MothersName = workerEO.MothersName,
+                        Roll = workerEO.Roll,
+                        User = workerEO.User,
+                        PermanentDistrict = workerEO.PermanentDistrict,
+                        PostName = workerEO.PostName,
+                        Quota = workerEO.Quota,
+                        DateOfBirth = workerEO.DateOfBirth
+                    });
+                }
             }
-
+            //results.total = workers.Count();
+            results.totalDisplay = workers.Count();
             return (results.total, results.totalDisplay, workers);
         }
     }

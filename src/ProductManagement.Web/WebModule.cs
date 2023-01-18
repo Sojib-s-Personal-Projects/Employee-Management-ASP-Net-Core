@@ -17,6 +17,8 @@ namespace ProductManagement.Web
 
             builder.RegisterType<WorkerInfoModel>().AsSelf();
 
+            builder.RegisterType<WorkerInfoListModel>().AsSelf();
+
             base.Load(builder);
         }
     }

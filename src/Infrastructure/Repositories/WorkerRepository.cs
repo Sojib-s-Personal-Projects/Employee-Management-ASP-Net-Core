@@ -14,11 +14,11 @@ namespace Infrastructure.Repositories
         }
 
         public (IList<Worker> data, int total, int totalDisplay) GetWorkers(int pageIndex,
-    int pageSize, string searchText, string orderby)
+            int pageSize, string searchText, string orderby)
         {
             (IList<Worker> data, int total, int totalDisplay) results =
-                Get(x => x.Roll.ToString().Contains(searchText) || x.Name.Contains(searchText), null,
-                "", pageIndex, pageSize, true);
+                Get(x => x.Roll.ToString().Contains(searchText) || x.Name.Contains(searchText) || x.WorkerInfo!=null, null,
+                "WorkerInfo", pageIndex, pageSize, true);
 
             return results;
         }

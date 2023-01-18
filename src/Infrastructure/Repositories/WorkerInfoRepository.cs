@@ -12,5 +12,15 @@ namespace Infrastructure.Repositories
         {
             _dbContext = context;
         }
+
+        public (IList<WorkerInfo> data, int total, int totalDisplay) GetWorkersInformation(int pageIndex,
+            int pageSize, string searchText, string orderby)
+        {
+            (IList<WorkerInfo> data, int total, int totalDisplay) results =
+                Get(x => x.BarCodeData.Contains(searchText), null,
+                "Worker", pageIndex, pageSize, true);
+
+            return results;
+        }
     }
 }

@@ -17,9 +17,9 @@ namespace Infrastructure.Services
             _mapper = mapper;
         }
 
-        public async Task<WorkerInfoBO> GetWorkerInformationByRoll(long roll)
+        public async Task<WorkerInfoBO> GetWorkerInformationByRoll(string barcode)
         {
-            var workerInfoEO= _applicationUnitOfWork.WorkersInformation.Get(x=>x.Roll==roll && x.BarCodeData!=null,"Worker").FirstOrDefault();
+            var workerInfoEO= _applicationUnitOfWork.WorkersInformation.Get(x=>x.BarCodeData==barcode && x.BarCodeData!=null,"Worker").FirstOrDefault();
             var workerInfoBO=_mapper.Map<WorkerInfoBO>(workerInfoEO);
             return workerInfoBO;
         }
@@ -46,6 +46,31 @@ namespace Infrastructure.Services
             var workerInfoEO = _applicationUnitOfWork.WorkersInformation.Get(x=>x.Roll== workerInfoBO.Roll,"Worker").FirstOrDefault();
             workerInfoEO.Price = workerInfoBO.Price;
             _applicationUnitOfWork.Save();
+        }
+
+        public (int total, int totalDisplay, IList<WorkerInfoBO> records) GetWorkersInformation(int pageIndex,
+            int pageSize, string searchText, string orderby)
+        {
+            (IList<WorkerInfoEO> data, int total, int totalDisplay) results = _applicationUnitOfWork
+                .WorkersInformation.GetWorkersInformation(pageIndex, pageSize, searchText, orderby);
+
+            IList<WorkerInfoBO> workersInfo = new List<WorkerInfoBO>();
+            foreach (WorkerInfoEO workerInfoEO in results.data)
+            {
+                if (workerInfoEO.Price == null)
+                {
+                    workersInfo.Add(new WorkerInfoBO
+                    {
+                        BarCodeData = workerInfoEO.BarCodeData,
+                        Roll = workerInfoEO.Roll,
+                        Id = workerInfoEO.Id,
+                        Price = workerInfoEO.Price,
+                    });
+                }
+            }
+            //results.total = workers.Count();
+            results.totalDisplay = workersInfo.Count();
+            return (results.total, results.totalDisplay, workersInfo);
         }
     }
 }

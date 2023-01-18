@@ -63,14 +63,14 @@ namespace ProductManagement.Web.Areas.Admin.Models
             return true;
         }
 
-        public async Task<WorkerInfo> GetWorkerInformationRoll(long roll)
+        public async Task<WorkerInfo> GetWorkerInformationRoll(string barcode)
         {
-            return await _workerInfoService.GetWorkerInformationByRoll(roll);
+            return await _workerInfoService.GetWorkerInformationByRoll(barcode);
         }
 
-        public async Task LoadData(long roll)
+        public async Task LoadData(string barcode)
         {
-            var workerInfo = await _workerInfoService.GetWorkerInformationByRoll(roll);
+            var workerInfo = await _workerInfoService.GetWorkerInformationByRoll(barcode);
             if (workerInfo != null)
             {
                 _mapper.Map(workerInfo, this);
