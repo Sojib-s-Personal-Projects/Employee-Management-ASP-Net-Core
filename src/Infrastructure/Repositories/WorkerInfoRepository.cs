@@ -17,7 +17,7 @@ namespace Infrastructure.Repositories
             int pageSize, string searchText, string orderby)
         {
             (IList<WorkerInfo> data, int total, int totalDisplay) results =
-                Get(x => x.BarCodeData.Contains(searchText), null,
+                GetDynamic(x => x.BarCodeData.Contains(searchText), orderby,
                 "Worker", pageIndex, pageSize, true);
 
             return results;

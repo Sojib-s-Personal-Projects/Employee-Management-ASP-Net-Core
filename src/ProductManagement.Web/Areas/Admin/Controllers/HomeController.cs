@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Infrastructure.BusinessObjects;
 using Infrastructure.Enum;
 using Infrastructure.Exceptions;
 using Infrastructure.Extensions;
@@ -31,7 +32,15 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> DashBoard()
         {
-            return View();
+            var model = _scope.Resolve<DashBoardModel>();
+            IList<Worker> list = new List<Worker>();
+            var Elist = await model.GetWorkersList();
+            foreach (var e in Elist)
+            {
+                list.Add(e);
+            }
+
+            return View(list);
         }
 
 
@@ -146,11 +155,19 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return Json(model.GetPagedWorkers(dataTableModel));
         }
 
-        public async Task<JsonResult> GetDashBoardData()
+        public async Task<IActionResult> GetDashBoardData()
         {
-            var dataTableModel = new DataTablesAjaxRequestModel(Request);
+            //var dataTableModel = new DataTablesAjaxRequestModel(Request);
             var model = _scope.Resolve<DashBoardModel>();
-            return Json(await model.GetDashboardInfo(dataTableModel));
+            IList<Worker> list= new List<Worker>();
+            var Elist = await model.GetWorkersList();
+            foreach(var e in Elist)
+            {
+                list.Add(e);
+            }
+
+            return View(list);
+            //return Json(await model.GetDashboardInfo(dataTableModel));
         }
 
         public async Task<JsonResult> GetWorkersInformationData()

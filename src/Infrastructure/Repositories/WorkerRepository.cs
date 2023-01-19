@@ -37,7 +37,7 @@ namespace Infrastructure.Repositories
             int pageSize, string searchText, string orderby)
         {
             (IList<Worker> data, int total, int totalDisplay) results =
-                Get(x => x.Roll.ToString().Contains(searchText) || x.Name.Contains(searchText) || x.WorkerInfo != null, null,
+                GetDynamic(x => x.Roll.ToString().Contains(searchText) || x.Name.Contains(searchText) || x.WorkerInfo != null, orderby,
                 "WorkerInfo", pageIndex, pageSize, true);
 
             return results;
@@ -47,10 +47,15 @@ namespace Infrastructure.Repositories
             int pageSize, string searchText, string orderby)
         {
             (IList<Worker> data, int total, int totalDisplay) results =
-                Get(x => x.Roll.ToString().Contains(searchText), null,
+                GetDynamic(x => x.Roll.ToString().Contains(searchText), orderby,
                 "WorkerInfo", pageIndex, pageSize, true);
 
             return results;
+        }
+
+        public List<Worker> GetWorkersList()
+        {
+            return _dbContext.Workers.Include(x=>x.WorkerInfo).Select(x=>x).ToList();
         }
     }
 }

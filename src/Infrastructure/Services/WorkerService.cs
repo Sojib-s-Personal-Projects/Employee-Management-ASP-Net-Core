@@ -1,14 +1,5 @@
 ﻿using AutoMapper;
-using Infrastructure.BusinessObjects;
-using Infrastructure.DbContexts;
-using Infrastructure.Entities;
 using Infrastructure.UnitOfWorks;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorkerBO = Infrastructure.BusinessObjects.Worker;
 using WorkerEO = Infrastructure.Entities.Worker;
 
@@ -41,6 +32,21 @@ namespace Infrastructure.Services
             return (results.total, results.totalDisplay, workers);
         }
 
+        public async Task<IList<WorkerBO>> GetWorkerList()
+        {
+            var workersBOList=new List<WorkerBO>();
+            var workersEOList=new List<WorkerEO>();
+
+            workersEOList = _applicationUnitOfWork.Workers.GetWorkersList();
+            foreach (WorkerEO workerEO in workersEOList)
+            {
+                var workerBO=_mapper.Map<WorkerBO>(workerEO);
+                workersBOList.Add(workerBO);
+            }
+
+            return workersBOList;
+        }
+
         public (int total, int totalDisplay, IList<WorkerBO> records) GetWorkers(int pageIndex,
             int pageSize, string searchText, string orderby)
         {
@@ -71,5 +77,14 @@ namespace Infrastructure.Services
             results.totalDisplay = workers.Count();
             return (results.total, results.totalDisplay, workers);
         }
+
+        //public async Task<IList<WorkerBO>> GetWorkerList()
+        //{
+        //    public IList<WorkerBO> WorkersBO;
+
+        //public List<WorkerEO> workersEO; 
+
+        //    return WorkersBO;
+        //}
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Infrastructure.BusinessObjects;
 using Infrastructure.Services;
 using ProductManagement.Web.Models;
 
@@ -6,6 +7,8 @@ namespace ProductManagement.Web.Areas.Admin.Models
 {
 	public class DashBoardModel : BaseModel
 	{
+        IList<Worker> Workers { get; set; }
+
         private IWorkerService? _workerService;
 
         public DashBoardModel(IWorkerService? workerService)
@@ -19,6 +22,11 @@ namespace ProductManagement.Web.Areas.Admin.Models
             _workerService = _scope.Resolve<IWorkerService>();
         }
 
+        public async Task<IList<Worker>> GetWorkersList()
+        {
+            var workersList = await _workerService.GetWorkerList();
+            return workersList;
+        }
         public async Task<object?> GetDashboardInfo(DataTablesAjaxRequestModel model)
 		{
             
