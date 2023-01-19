@@ -29,6 +29,12 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View();
         }
 
+        public async Task<IActionResult> DashBoard()
+        {
+            return View();
+        }
+
+
         public async Task<IActionResult> UpdateDetails(long id)
         {
             var model = _scope.Resolve<WorkerInfoModel>();
@@ -138,6 +144,13 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             var dataTableModel = new DataTablesAjaxRequestModel(Request);
             var model = _scope.Resolve<WorkerListModel>();
             return Json(model.GetPagedWorkers(dataTableModel));
+        }
+
+        public async Task<JsonResult> GetDashBoardData()
+        {
+            var dataTableModel = new DataTablesAjaxRequestModel(Request);
+            var model = _scope.Resolve<DashBoardModel>();
+            return Json(await model.GetDashboardInfo(dataTableModel));
         }
 
         public async Task<JsonResult> GetWorkersInformationData()

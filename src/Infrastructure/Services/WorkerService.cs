@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Infrastructure.BusinessObjects;
 using Infrastructure.DbContexts;
+using Infrastructure.Entities;
 using Infrastructure.UnitOfWorks;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +23,22 @@ namespace Infrastructure.Services
         {
             _applicationUnitOfWork = applicationUnitOfWork;
             _mapper = mapper;
+        }
+
+        public async Task<(int total, int totalDisplay, IList<WorkerBO> records)> GetDashboardInfo(int pageIndex, int pageSize, string searchText, string orderby)
+        {
+            (IList<WorkerEO> data, int total, int totalDisplay) results = _applicationUnitOfWork
+                .Workers.GetDashBoardInfo(pageIndex, pageSize, searchText, orderby);
+
+            IList<WorkerBO> workers = new List<WorkerBO>();
+            foreach (WorkerEO workerEO in results.data)
+            {
+                var workerBO = _mapper.Map<WorkerBO>(workerEO);
+                workers.Add(workerBO);
+            }
+            results.total = workers.Count();
+            results.totalDisplay = workers.Count();
+            return (results.total, results.totalDisplay, workers);
         }
 
         public (int total, int totalDisplay, IList<WorkerBO> records) GetWorkers(int pageIndex,

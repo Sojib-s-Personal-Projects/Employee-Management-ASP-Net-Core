@@ -106,7 +106,7 @@
 
 
             // #myInput is a <input type="text"> element
-            $('#barCodeSubmit').on('click', function () {
+            $('#barCodeSubmit').on('click submit', function () {
                 var table = $('#workers').DataTable({
                     "processing": true,
                     "serverSide": true,
@@ -141,7 +141,6 @@
                     }
                 });
                 var val = $("#barCode").val();
-                alert(val);
                 table.search(val).draw();
                 $("#barCodeCard").show();
             });

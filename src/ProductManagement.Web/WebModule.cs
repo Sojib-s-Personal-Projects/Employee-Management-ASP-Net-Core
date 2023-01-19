@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Infrastructure.BusinessObjects;
 using ProductManagement.Web.Areas.Admin.Models;
 using ProductManagement.Web.Models;
 
@@ -18,6 +17,8 @@ namespace ProductManagement.Web
             builder.RegisterType<WorkerInfoModel>().AsSelf();
 
             builder.RegisterType<WorkerInfoListModel>().AsSelf();
+
+            builder.RegisterType<DashBoardModel>().AsSelf();
 
             base.Load(builder);
         }

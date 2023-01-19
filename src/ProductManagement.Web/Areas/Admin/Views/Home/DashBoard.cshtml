@@ -1,4 +1,7 @@
-﻿@section Styles{
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+@section Styles{
     <!--Datatables-->
     <link rel="stylesheet" href="~/Admins/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 }
@@ -7,16 +10,20 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h1>The workers are listed by their roll</h1>
-                <h3>You can search them by roll in the search bar and update their details</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="workers" class="table table-bordered table-hover">
+                <table id="dashboard" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th class="text-center">Roll</th>
-                            <th class="text-center">Action</th>
+                            <th class="text-center">User</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Date of Birth</th>
+                            <th class="text-center">Permanent District</th>
+                            <th class="text-center">Quota</th>
+                            <th class="text-center">Bar Code</th>
+                            <th class="text-center">Price</th>
                         </tr>
                     </thead>
                 </table>
@@ -36,25 +43,14 @@
 
     <script>
         $(function () {
-            $('#workers').DataTable({
+            $('#dashboard').DataTable({
                 "processing": true,
                 "serverSide": true,
                 "ajax": {
-                    "url": "/admin/home/GetWorkerData",
+                    "url": "/admin/home/GetDashBoardData",
                 },
                 "columnDefs": [
-                    { "className": "dt-center", "targets": "_all" },
-                    {
-                        "orderable": false,
-                        "targets": 1,
-                        "render": function (data, type, row) {
-                            return `<button type="submit" class="btn btn-info btn-sm" onclick="window.location.href='/Admin/Home/UpdateDetails/${row[0]}'" value='${row[0]}'>
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                                Scan Bar Code
-                                            </button>`;
-                        }
-                    }
+                    { "className": "dt-center", "targets": "_all" }
                 ],
                 "oLanguage": {
                     "sSearch": "<b>Search By Roll:</b>"
