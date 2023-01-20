@@ -1,15 +1,4 @@
-﻿using Humanizer;
-using Infrastructure.Entities;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Runtime.Intrinsics.Arm;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using Infrastructure.Entities;
 
 namespace Infrastructure.Seeds
 {

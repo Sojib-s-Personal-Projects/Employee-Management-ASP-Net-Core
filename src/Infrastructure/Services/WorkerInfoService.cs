@@ -31,9 +31,15 @@ namespace Infrastructure.Services
             workerInfoEO.Worker = worker;
 
             var workerInfoCount = _applicationUnitOfWork.WorkersInformation.Get(x => x.Roll == workerInfoEO.Roll, "").Count;
-            if(workerInfoCount>0)
+            var barCodeDuplicateCount = _applicationUnitOfWork.WorkersInformation.Get(x => x.BarCodeData == workerInfoEO.BarCodeData, "").Count;
+
+            if (workerInfoCount>0)
             {
-                throw new DataExistsException("This workers data has barcode has already been scanned");
+                throw new WorkerExistsException("This workers data has barcode has already been scanned");
+            }
+            if (barCodeDuplicateCount > 0)
+            {
+                throw new BarCodeExistsException("This bar code has already been scanned");
             }
 
             _applicationUnitOfWork.WorkersInformation.Add(workerInfoEO);

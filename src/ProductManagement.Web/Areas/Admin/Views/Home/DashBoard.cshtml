@@ -2,10 +2,9 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
-@section Styles{
-}
+
 <div class="row">
-    <div class="col-12">
+    <div class="col-6">
         <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
@@ -20,7 +19,7 @@
         </div>
     </div>
 
-    <div class="col-12">
+    <div class="col-6">
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
@@ -31,7 +30,7 @@
             <div class="icon">
                 <i class="	fas fa-edit"></i>
             </div>
-            <a asp-action="Index" asp-area="Admin" asp-controller="Home" type=" button" class="small-box-footer">Enter Prices <i class="fas fa-arrow-circle-right"></i></a>
+            <a asp-action="InsertPriceList" asp-area="Admin" asp-controller="Home" type=" button" class="small-box-footer">Enter Prices <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
 
@@ -102,9 +101,3 @@
     <!-- /.card -->
 </div>*@
 </div>
-
-
-@section Scripts
-{
-
-}

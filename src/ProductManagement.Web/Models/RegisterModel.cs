@@ -1,8 +1,5 @@
 ﻿using Autofac;
-using Infrastructure.Entities;
-using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductManagement.Web.Models

@@ -26,27 +26,19 @@ namespace ProductManagement.Web.Areas.Admin.Models
                 model.PageIndex,
                 model.PageSize,
                 model.SearchText,
-                model.GetSortText(new string[] { "Roll", /*"User", "Name", "FathersName", "MothersName", "PostName", "DateOfBirth", "PermanentDistrict", "Quota",*/"Id" }));
+                model.GetSortText(new string[] { "Roll", "Id" }));
 
             return new
             {
                 recordsTotal = data.total,
                 recordsFiltered = data.totalDisplay,
                 data = (from record in data.records
-                        select new string[]
-                        {
-                                record.Roll.ToString(),
-                                //record.User,
-                                //record.Name,
-                                //record.FathersName,
-                                //record.MothersName,
-                                //record.PostName,
-                                //record.DateOfBirth.ToString(),
-                                //record.PermanentDistrict,
-                                //record.Quota,
-                                record.Id.ToString()
-                        }
-                    ).ToArray()
+                            select new string[]
+                            {
+                                    record.Roll.ToString(),
+                                    record.Id.ToString()
+                            }
+                        ).ToArray()
             };
         }
 	}

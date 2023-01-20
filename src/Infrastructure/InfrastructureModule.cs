@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Infrastructure.BusinessObjects;
 using Infrastructure.DbContexts;
 using Infrastructure.Repositories;
 using Infrastructure.Services;

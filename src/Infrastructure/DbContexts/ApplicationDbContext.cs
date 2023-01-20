@@ -2,7 +2,6 @@
 using Infrastructure.Seeds;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 namespace Infrastructure.DbContexts
 {
@@ -34,29 +33,6 @@ namespace Infrastructure.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Topic>().ToTable("Topics");
-            //modelBuilder.Entity<CourseRegistration>().ToTable("CourseRegistrations");
-
-            //modelBuilder.Entity<Course>()
-            //    .HasMany(n => n.Topics)
-            //    .WithOne(a => a.Course)
-            //    .HasForeignKey(x => x.CourseId);
-
-            //modelBuilder.Entity<CourseRegistration>()
-            //    .HasOne(a => a.Course)
-            //    .WithMany(n => n.CourseStudents)
-            //    .HasForeignKey(x => x.CourseId);
-
-            //modelBuilder.Entity<CourseRegistration>()
-            //    .HasOne(a => a.Student)
-            //    .WithMany(n => n.StudentCourses)
-            //    .HasForeignKey(x => x.StudentId);
-
-            //modelBuilder.Entity<Company>()
-            //    .HasMany(a => a.StockPrices)
-            //    .WithOne(n => n.Company)
-            //    .IsRequired()
-            //    .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<Worker>()
                 .HasKey(w => w.Roll);
 

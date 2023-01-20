@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-
-namespace Infrastructure.UnitOfWorks
+﻿namespace Infrastructure.UnitOfWorks
 {
     public interface IUnitOfWork : IDisposable
     {

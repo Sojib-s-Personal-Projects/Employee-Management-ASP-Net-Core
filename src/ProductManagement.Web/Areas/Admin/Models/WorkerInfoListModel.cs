@@ -33,12 +33,12 @@ namespace ProductManagement.Web.Areas.Admin.Models
                 recordsTotal = data.total,
                 recordsFiltered = data.totalDisplay,
                 data = (from record in data.records
-                        select new string[]
-                        {
-                                record.BarCodeData.ToString(),
-                                record.Id.ToString(),
-                        }
-                    ).ToArray()
+                            select new string[]
+                            {
+                                    record.BarCodeData.ToString(),
+                                    record.Id.ToString(),
+                            }
+                        ).ToArray()
             };
         }
 

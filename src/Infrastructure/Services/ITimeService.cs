@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace Infrastructure.Services
+﻿namespace Infrastructure.Services
 {
     public interface ITimeService
     {

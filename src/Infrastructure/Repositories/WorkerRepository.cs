@@ -36,7 +36,7 @@ namespace Infrastructure.Repositories
 
         public List<Worker> GetWorkersList()
         {
-            return _dbContext.Workers.Include(x=>x.WorkerInfo).Select(x=>x).ToList();
+            return _dbContext.Workers.Where(x=>x.WorkerInfo != null).Include(x=>x.WorkerInfo).ToList();
         }
 
         public async Task<int> GetUnscannedWorkersCount()

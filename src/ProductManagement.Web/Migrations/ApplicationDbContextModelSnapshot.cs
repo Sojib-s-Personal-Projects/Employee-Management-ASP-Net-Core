@@ -255,7 +255,7 @@ namespace ProductManagement.Web.Migrations
 
                     b.HasKey("Roll");
 
-                    b.ToTable("Workers");
+                    b.ToTable("Workers", (string)null);
 
                     b.HasData(
                         new
@@ -411,7 +411,7 @@ namespace ProductManagement.Web.Migrations
                     b.HasIndex("Roll")
                         .IsUnique();
 
-                    b.ToTable("WorkersInformation");
+                    b.ToTable("WorkersInformation", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.ApplicationRoleClaim", b =>

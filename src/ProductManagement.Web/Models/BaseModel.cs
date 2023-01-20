@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Infrastructure.Services;
-using System.Security.Claims;
 
 namespace ProductManagement.Web.Models
 {

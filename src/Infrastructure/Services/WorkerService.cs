@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Infrastructure.Exceptions;
 using Infrastructure.UnitOfWorks;
 using WorkerBO = Infrastructure.BusinessObjects.Worker;
 using WorkerEO = Infrastructure.Entities.Worker;
@@ -34,7 +35,13 @@ namespace Infrastructure.Services
 
         public async Task<IList<WorkerBO>> GetWorkerList()
         {
-            var workersBOList=new List<WorkerBO>();
+            var priceNotEnteredCount = await _applicationUnitOfWork.Workers.GetPriceNotInsertedWorkersCount();
+            var workersBOList = new List<WorkerBO>();
+
+            if (priceNotEnteredCount > 0)
+                return workersBOList;
+
+            
             var workersEOList=new List<WorkerEO>();
 
             workersEOList = _applicationUnitOfWork.Workers.GetWorkersList();

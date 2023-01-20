@@ -1,15 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Data.Common;
+﻿using Infrastructure.Entities;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlTypes;
 using System.Linq.Dynamic.Core;
-using Infrastructure.Entities;
+using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories
 {

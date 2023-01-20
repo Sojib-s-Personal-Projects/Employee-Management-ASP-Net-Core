@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Infrastructure.Entities;
 using System.Linq.Expressions;
-using Infrastructure.Entities;
 
 namespace Infrastructure.Repositories
 {

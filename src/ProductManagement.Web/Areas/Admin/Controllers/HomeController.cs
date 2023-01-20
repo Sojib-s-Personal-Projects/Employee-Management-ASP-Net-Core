@@ -35,7 +35,7 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
         public async Task<IActionResult> Report()
         {
             var model = _scope.Resolve<ReportModel>();
-            IList<Worker> workerList = await model.GetWorkersList();
+            IList<Worker> workerList= await model.GetWorkersList();
 
             return View(workerList);
         }
@@ -45,7 +45,7 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             var model = _scope.Resolve<DashBoardModel>();
             await model.GetPriceNotInsertedWorkersCount();
             await model.GetUnscannedWorkersCount();
-            
+
             return View(model);
         }
 
@@ -90,7 +90,17 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
                     Type = ResponseTypes.Danger
                 });
             }
-            catch (DataExistsException ioe)
+            catch (WorkerExistsException ioe)
+            {
+                _logger.LogError(ioe, ioe.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = ioe.Message,
+                    Type = ResponseTypes.Danger
+                });
+            }
+            catch (BarCodeExistsException ioe)
             {
                 _logger.LogError(ioe, ioe.Message);
 

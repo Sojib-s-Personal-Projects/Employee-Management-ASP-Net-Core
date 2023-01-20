@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using ProductManagement.Web.Models;
 using System.Text;
 
-namespace DevTrack.Web.Controllers
+namespace ProductManagement.Web.Controllers
 {
     public class AccountController : Controller
     {
