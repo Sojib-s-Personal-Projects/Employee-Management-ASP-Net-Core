@@ -68,7 +68,32 @@ namespace Infrastructure.Services
                     });
                 }
             }
-            //results.total = workers.Count();
+
+            results.totalDisplay = workersInfo.Count();
+            return (results.total, results.totalDisplay, workersInfo);
+        }
+
+        public (int total, int totalDisplay, IList<WorkerInfoBO> records) GetPriceNotInsertedWorkersInformation(int pageIndex,
+            int pageSize, string searchText, string orderby)
+        {
+            (IList<WorkerInfoEO> data, int total, int totalDisplay) results = _applicationUnitOfWork
+                .WorkersInformation.GetPriceNotInsertedWorkersInformation(pageIndex, pageSize, searchText, orderby);
+
+            IList<WorkerInfoBO> workersInfo = new List<WorkerInfoBO>();
+            foreach (WorkerInfoEO workerInfoEO in results.data)
+            {
+                if (workerInfoEO.Price == null)
+                {
+                    workersInfo.Add(new WorkerInfoBO
+                    {
+                        BarCodeData = workerInfoEO.BarCodeData,
+                        Roll = workerInfoEO.Roll,
+                        Id = workerInfoEO.Id,
+                        Price = workerInfoEO.Price,
+                    });
+                }
+            }
+
             results.totalDisplay = workersInfo.Count();
             return (results.total, results.totalDisplay, workersInfo);
         }

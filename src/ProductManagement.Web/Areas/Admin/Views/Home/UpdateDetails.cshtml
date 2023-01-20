@@ -7,7 +7,7 @@
         <div class="col-8">
             
             <!-- Change Password Form -->
-            <form asp-antiforgery="true" asp-area="Admin" asp-controller="Home" asp-action="UpdateDetails" method="post">
+            <form id="scanForm" asp-antiforgery="true" asp-area="Admin" asp-controller="Home" asp-action="UpdateDetails" method="post">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
                         <h1>Scan the barcodes for Worker @Model.Roll</h1>
@@ -36,7 +36,7 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                                    <a class="btn btn-primary btn-block" id="submit">Submit</a>
                                 </td>
                             </tr>
                         </table>
@@ -46,3 +46,11 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+<script>
+        $("#submit").click(function () {
+            $("#scanForm").submit();
+        });
+</script>
+}

@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbnNlcnRQcmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/InsertPriceList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbnNlcnRQcmljZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Price.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxQcmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

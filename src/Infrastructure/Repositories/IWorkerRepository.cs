@@ -9,5 +9,7 @@ namespace Infrastructure.Repositories
         (IList<Worker> data, int total, int totalDisplay) GetDashBoardInfo(int pageIndex,
         int pageSize, string searchText, string orderby);
         List<Worker> GetWorkersList();
+        Task<int> GetUnscannedWorkersCount();
+        Task<int> GetPriceNotInsertedWorkersCount();
     }
 }

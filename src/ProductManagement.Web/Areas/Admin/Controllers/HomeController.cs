@@ -3,6 +3,7 @@ using Infrastructure.BusinessObjects;
 using Infrastructure.Enum;
 using Infrastructure.Exceptions;
 using Infrastructure.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductManagement.Web.Areas.Admin.Models;
 using ProductManagement.Web.Models;
@@ -10,6 +11,7 @@ using ProductManagement.Web.Models;
 namespace ProductManagement.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILifetimeScope _scope;
@@ -32,28 +34,19 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> Report()
         {
-            var model = _scope.Resolve<DashBoardModel>();
-            IList<Worker> list = new List<Worker>();
-            var Elist = await model.GetWorkersList();
-            foreach (var e in Elist)
-            {
-                list.Add(e);
-            }
+            var model = _scope.Resolve<ReportModel>();
+            IList<Worker> workerList = await model.GetWorkersList();
 
-            return View(list);
+            return View(workerList);
         }
 
         public async Task<IActionResult> DashBoard()
         {
             var model = _scope.Resolve<DashBoardModel>();
-            IList<Worker> list = new List<Worker>();
-            var Elist = await model.GetWorkersList();
-            foreach (var e in Elist)
-            {
-                list.Add(e);
-            }
-
-            return View(list);
+            await model.GetPriceNotInsertedWorkersCount();
+            await model.GetUnscannedWorkersCount();
+            
+            return View(model);
         }
 
 
@@ -130,6 +123,11 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> InsertPriceList()
+        {
+            return View();
+        }
+
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> InsertPrice(WorkerInfoModel model)
         {
@@ -168,26 +166,18 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return Json(model.GetPagedWorkers(dataTableModel));
         }
 
-        public async Task<IActionResult> GetDashBoardData()
-        {
-            //var dataTableModel = new DataTablesAjaxRequestModel(Request);
-            var model = _scope.Resolve<DashBoardModel>();
-            IList<Worker> list= new List<Worker>();
-            var Elist = await model.GetWorkersList();
-            foreach(var e in Elist)
-            {
-                list.Add(e);
-            }
-
-            return View(list);
-            //return Json(await model.GetDashboardInfo(dataTableModel));
-        }
-
         public async Task<JsonResult> GetWorkersInformationData()
         {
             var dataTableModel = new DataTablesAjaxRequestModel(Request);
             var model = _scope.Resolve<WorkerInfoListModel>();
             return Json(model.GetPagedWorkersInforamation(dataTableModel));
+        }
+
+        public async Task<JsonResult> GetPriceNotInsertedWorkersInformation()
+        {
+            var dataTableModel = new DataTablesAjaxRequestModel(Request);
+            var model = _scope.Resolve<WorkerInfoListModel>();
+            return Json(model.GetPriceNotInsertedWorkersInformation(dataTableModel));
         }
     }
 }

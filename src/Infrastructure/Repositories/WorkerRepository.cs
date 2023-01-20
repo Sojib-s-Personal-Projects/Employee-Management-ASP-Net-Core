@@ -2,7 +2,6 @@
 using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using DashBoardInfoBO = Infrastructure.BusinessObjects.DashBoardInfo;
 
 namespace Infrastructure.Repositories
 {
@@ -14,24 +13,6 @@ namespace Infrastructure.Repositories
         {
             _dbContext = context;
         }
-
-        //public async Task<(IList<DashBoardInfoBO> data, int total, int totalDisplay)> GetDashBoardInfo(int pageIndex, int pageSize, string searchText, string orderby)
-        //{
-        //    var result = await QueryWithStoredProcedureAsync<DashBoardInfoBO>("sp_GetDashBoardInfo", new Dictionary<string, object>
-        //    {
-        //        {"PageIndex", pageIndex},
-        //        {"PageSize", pageSize},
-        //        {"SearchText", searchText},
-        //        {"OrderBy", orderby }
-        //    },
-        //    new Dictionary<string, Type>
-        //    {
-        //        {"Total", typeof(int)},
-        //        {"TotalDisplay", typeof(int)}
-        //    });
-
-        //    return (result.result, int.Parse(result.outValues.ElementAt(0).Value.ToString()), int.Parse(result.outValues.ElementAt(1).Value.ToString()));
-        //}
 
         public (IList<Worker> data, int total, int totalDisplay) GetWorkers(int pageIndex,
             int pageSize, string searchText, string orderby)
@@ -56,6 +37,16 @@ namespace Infrastructure.Repositories
         public List<Worker> GetWorkersList()
         {
             return _dbContext.Workers.Include(x=>x.WorkerInfo).Select(x=>x).ToList();
+        }
+
+        public async Task<int> GetUnscannedWorkersCount()
+        {
+            return _dbContext.Workers.Where(x => x.WorkerInfo == null).Count();
+        }
+
+        public async Task<int> GetPriceNotInsertedWorkersCount()
+        {
+            return _dbContext.Workers.Where(x => x.WorkerInfo != null && x.WorkerInfo.Price==null).Count();
         }
     }
 }

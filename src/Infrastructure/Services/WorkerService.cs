@@ -73,18 +73,18 @@ namespace Infrastructure.Services
                     });
                 }
             }
-            //results.total = workers.Count();
             results.totalDisplay = workers.Count();
             return (results.total, results.totalDisplay, workers);
         }
 
-        //public async Task<IList<WorkerBO>> GetWorkerList()
-        //{
-        //    public IList<WorkerBO> WorkersBO;
+        public async Task<int> GetUnscannedWorkersCount()
+        {
+            return await _applicationUnitOfWork.Workers.GetUnscannedWorkersCount();
+        }
 
-        //public List<WorkerEO> workersEO; 
-
-        //    return WorkersBO;
-        //}
+        public async Task<int> GetPriceNotInsertedWorkersCount()
+        {
+            return await _applicationUnitOfWork.Workers.GetPriceNotInsertedWorkersCount();
+        }
     }
 }

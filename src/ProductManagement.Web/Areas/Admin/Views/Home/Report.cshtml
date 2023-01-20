@@ -1,5 +1,4 @@
-﻿@using Infrastructure.BusinessObjects;
-@model IEnumerable<Worker>
+﻿@model IEnumerable<Worker>
 @{
     ViewData["Title"] = "Report";
     Layout = "_ReportLayout";
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.2.0/css/dataTables.dateTime.min.css  ">
 
 }
-
+@*
 <table border="0" cellspacing="5" cellpadding="5">
     <tbody>
         <tr>
@@ -24,110 +23,85 @@
             <td><input type="text" id="max" name="max"></td>
         </tr>
     </tbody>
-</table>
-@*<input type="checkbox" name="chk_box">Toggle checked/unchecked*@
-<table id="example" class="display nowrap" width="100%">
-    <thead>
-        <tr>
-            <th>Roll</th>
-            <th>Name</th>
-            <th>User</th>
-            <th>District</th>
-            <th>Quota</th>
-            <th>BirthDate</th>
-            <th>BarCode</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-@*            Does not work if space is given between name*@
-            <th class="thead2 filterhead">Roll</th>
-            <th class="thead2 filterhead">Name</th>
-            <th class="thead2 filterhead">User</th>
-            <th class="thead2 filterhead">District</th>
-            <th class="thead2 filterhead">Quota</th>
-            <th class="thead2 filterhead">BirthDate</th>
-            <th class="thead2 filterhead">BarCode</th>
-            <th class="thead2 filterhead">Price</th>
-        </tr>
-    </thead>
+</table>*@
 
-    <tfoot>
-        <tr>
-            <th>Roll</th>
-            <th>Name</th>
-            <th>User</th>
-            <th>District</th>
-            <th>Quota</th>
-            <th>BirthDate</th>
-            <th>BarCode</th>
-            <th>Price</th>
-        </tr>
-    </tfoot>
-    <tbody>
-        @{
-            if (Model != null)
-            {
-                foreach (var worker in Model)
-                {
+<div class="row">
+    <div class="col-12">
+        <table id="example" class="display" width="100%">
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Name</th>
+                    <th>User</th>
+                    <th>PostName</th>
+                    <th>FathersName</th>
+                    <th>MothersName</th>
+                    <th>District</th>
+                    <th>Quota</th>
+                    <th>BirthDate</th>
+                    <th>BarCode</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <th class="thead2 filterhead">Roll</th>
+                    <th class="thead2 filterhead">Name</th>
+                    <th class="thead2 filterhead">User</th>
+                    <th class="thead2 filterhead">PostName</th>
+                    <th class="thead2 filterhead">FathersName</th>
+                    <th class="thead2 filterhead">MothersName</th>
+                    <th class="thead2 filterhead">District</th>
+                    <th class="thead2 filterhead">Quota</th>
+                    <th class="thead2 filterhead">BirthDate</th>
+                    <th class="thead2 filterhead">BarCode</th>
+                    <th class="thead2 filterhead">Price</th>
+                </tr>
+            </thead>
 
-                    var barCodeData = (worker.WorkerInfo != null) ? worker.WorkerInfo.BarCodeData : "Not Inserted";
-                    var price = (worker.WorkerInfo != null) ? worker.WorkerInfo.Price.ToString() : "Not Inserted";
-                    <tr>
-                     
-                        <td>@worker.Roll</td>
-                        <td>@worker.Name</td>
-                        <td>@worker.User</td>
-                        <td>@worker.PermanentDistrict</td>
-                        <td>@worker.Quota</td>
-                        <td>@worker.DateOfBirth.ToShortDateString()</td>
-                        <td>@barCodeData</td>
-                        <td>@price</td>
-                    </tr>
+            <tfoot>
+                <tr>
+                    <th>Roll</th>
+                    <th>Name</th>
+                    <th>User</th>
+                    <th>PostName</th>
+                    <th>FathersName</th>
+                    <th>MothersName</th>
+                    <th>District</th>
+                    <th>Quota</th>
+                    <th>BirthDate</th>
+                    <th>BarCode</th>
+                    <th>Price</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var worker in Model)
+                        {
+
+                            var barCodeData = (worker.WorkerInfo != null) ? worker.WorkerInfo.BarCodeData : "Not Inserted";
+                            var price = (worker.WorkerInfo != null) ? worker.WorkerInfo.Price.ToString() : "Not Inserted";
+                            <tr>
+
+                                <td>@worker.Roll</td>
+                                <td>@worker.Name</td>
+                                <td>@worker.User</td>
+                                <td>@worker.PostName</td>
+                                <td>@worker.FathersName</td>
+                                <td>@worker.MothersName</td>
+                                <td>@worker.PermanentDistrict</td>
+                                <td>@worker.Quota</td>
+                                <td>@worker.DateOfBirth.ToShortDateString()</td>
+                                <td>@barCodeData</td>
+                                <td>@price</td>
+                            </tr>
+                        }
+                    }
                 }
-            }
-        }
-    </tbody>
-    @*    <tbody>
-    <tr>
-    <td><input type="checkbox" checked name="is_hidden" size="5" style="text-align: right"></td>
-    <td>Tiger Nixon</td>
-    <td>System Architect</td>
-    <td>Edinburgh</td>
-    <td>61</td>
-    <td>2011/04/25</td>
-    <td>$3,120</td>
-    </tr>
-    <tr>
-    <td><input type="checkbox" name="is_hidden" size="5" style="text-align: right"></td>
-    <td>Garrett Winters</td>
-    <td>Director</td>
-    <td>Edinburgh</td>
-    <td>63</td>
-    <td>2011/07/25</td>
-    <td>$5,300</td>
-    </tr>
-    <tr>
-    <td><input type="checkbox" name="is_hidden" size="5" style="text-align: right"></td>
-    <td>Ashton Cox</td>
-    <td>Technical Author</td>
-    <td>San Francisco</td>
-    <td>66</td>
-    <td>2009/01/12</td>
-    <td>$4,800</td>
-    </tr>
-    <tr>
-    <td><input type="checkbox" checked name="is_hidden" size="5" style="text-align: right"></td>
-    <td>Cedric Kelly</td>
-    <td>Javascript Developer</td>
-    <td>Edinburgh</td>
-    <td>22</td>
-    <td>2012/03/29</td>
-    <td>$3,600</td>
-    </tr>
-
-
-    </tbody>*@
-</table>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 @section Scripts{
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -154,35 +128,35 @@
             var minDate, maxDate;
 
             // Custom filtering function which will search data in column four between two values
-            $.fn.dataTable.ext.search.push(
-                function (settings, data, dataIndex) {
-                    var min = minDate.val();
-                    var max = maxDate.val();
-                    var date = new Date(data[5]);
+            //$.fn.dataTable.ext.search.push(
+            //    function (settings, data, dataIndex) {
+            //        var min = minDate.val();
+            //        var max = maxDate.val();
+            //        var date = new Date(data[5]);
 
-                    if (
-                        (min === null && max === null) ||
-                        (min === null && date <= max) ||
-                        (min <= date && max === null) ||
-                        (min <= date && date <= max)
-                    ) {
-                        return true;
-                    }
-                    return false;
-                }
-            );
+            //        if (
+            //            (min === null && max === null) ||
+            //            (min === null && date <= max) ||
+            //            (min <= date && max === null) ||
+            //            (min <= date && date <= max)
+            //        ) {
+            //            return true;
+            //        }
+            //        return false;
+            //    }
+            //);
 
-            minDate = new DateTime($('#min'), {
-                format: 'MMMM Do YYYY'
-            });
-            maxDate = new DateTime($('#max'), {
-                format: 'MMMM Do YYYY'
-            });
+            //minDate = new DateTime($('#min'), {
+            //    format: 'MMMM Do YYYY'
+            //});
+            //maxDate = new DateTime($('#max'), {
+            //    format: 'MMMM Do YYYY'
+            //});
 
-            // Refilter the table
-            $('#min, #max').on('change', function () {
-                table.draw();
-            });
+            //// Refilter the table
+            //$('#min, #max').on('change', function () {
+            //    table.draw();
+            //});
 
 
             $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
@@ -205,6 +179,8 @@
                 'orderCellsTop': true,
                 'pageLength': 100,
                 dom: 'Blfrtip',
+                scrollY: 500,
+                scrollX: true,
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ],
@@ -257,8 +233,15 @@
                             $('.select2').val(null).trigger('change');
                         }
                     });
-                }
-
+                },
+                "columnDefs": [
+                    { "className": "dt-center", "targets": "_all" }
+                ],
+                aLengthMenu: [
+                    [5, 10, 25, 50, 100, 200, 500, -1],
+                    [5, 10, 25, 50, 100, 200, 500, "All"]
+                ],
+                iDisplayLength: -1
             });
 
 

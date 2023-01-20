@@ -26,7 +26,7 @@ namespace ProductManagement.Web.Areas.Admin.Models
                 model.PageIndex,
                 model.PageSize,
                 model.SearchText,
-                model.GetSortText(new string[] { "BarCodeData", /*"User", "Name", "FathersName", "MothersName", "PostName", "DateOfBirth", "PermanentDistrict", "Quota",*/"Id" }));
+                model.GetSortText(new string[] { "BarCodeData","Id" }));
 
             return new
             {
@@ -36,14 +36,29 @@ namespace ProductManagement.Web.Areas.Admin.Models
                         select new string[]
                         {
                                 record.BarCodeData.ToString(),
-                                //record.User,
-                                //record.Name,
-                                //record.FathersName,
-                                //record.MothersName,
-                                //record.PostName,
-                                //record.DateOfBirth.ToString(),
-                                //record.PermanentDistrict,
-                                //record.Quota,
+                                record.Id.ToString(),
+                        }
+                    ).ToArray()
+            };
+        }
+
+        public object? GetPriceNotInsertedWorkersInformation(DataTablesAjaxRequestModel model)
+        {
+
+            var data = _workerInfoService.GetPriceNotInsertedWorkersInformation(
+                model.PageIndex,
+                model.PageSize,
+                model.SearchText,
+                model.GetSortText(new string[] { "BarCodeData", "Id" }));
+
+            return new
+            {
+                recordsTotal = data.total,
+                recordsFiltered = data.totalDisplay,
+                data = (from record in data.records
+                        select new string[]
+                        {
+                                record.BarCodeData.ToString(),
                                 record.Id.ToString(),
                         }
                     ).ToArray()

@@ -1,217 +1,110 @@
-﻿@using Infrastructure.BusinessObjects;
-@model IEnumerable<Worker>
+﻿@model DashBoardModel
 @{
     ViewData["Title"] = "Dashboard";
 }
 @section Styles{
-    <!--Datatables-->
-    <link rel="stylesheet" href="~/Admins/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.1.0/css/searchPanes.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.5.0/css/select.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
-
 }
-
 <div class="row">
+    <div class="col-12">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h1 style="font-weight:bold">@Model.UnscannedWorkerCount</h1>
+
+                <h2 style="font-weight:bold">Unscanned Workers</h2>
+            </div>
+            <div class="icon">
+                <i class="fa fa-qrcode"></i>
+            </div>
+            <a asp-action="Index" asp-area="Admin" asp-controller="Home" type=" button" class="small-box-footer">Scan Barcodes <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <!-- small box -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h1 style="font-weight:bold">@Model.PriceNotInsertedWorkersCount</h1>
+
+                <h2 style="font-weight:bold">Price Not Entered</h2>
+            </div>
+            <div class="icon">
+                <i class="	fas fa-edit"></i>
+            </div>
+            <a asp-action="Index" asp-area="Admin" asp-controller="Home" type=" button" class="small-box-footer">Enter Prices <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+@*    <!-- ./col -->
+    <div class=" col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                <p>Bounce Rate</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+            </div>
+            <a asp-action="Index" asp-area="Admin" asp-controller="Home" type=" button" class="small-box-footer">Scan Barcodes<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+
+    <!-- ./col -->
+    <div class="col-6">
+        <!-- small box -->
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>65</h3>
+
+                <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>*@
+    <!-- ./col -->
+</div>
+@*<div class="row">
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
+                <h1>Number of workers whose barcode has not been scanned: @Model.UnscannedWorkerCount</h1>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
-                <table id="dashboard" class="table table-bordered table-hover" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Roll</th>
-                            <th class="text-center">User</th>
-                            <th class="text-center">Name</th>
-                            <th class="text-center">Date of Birth</th>
-                            <th class="text-center">Permanent District</th>
-                            <th class="text-center">Quota</th>
-                            <th class="text-center">Bar Code</th>
-                            <th class="text-center">Price</th>
-                        </tr>
-                        <tr>
-                            <th class="text-center thead2">Roll</th>
-                            <th class="text-center thead2">User</th>
-                            <th class="text-center thead2">Name</th>
-                            <th class="text-center thead2">Date of Birth</th>
-                            <th class="text-center thead2 filterhead">Permanent District</th>
-                            <th class="text-center thead2 filterhead">Quota</th>
-                            <th class="text-center thead2">Bar Code</th>
-                            <th class="text-center thead2 filterhead">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            if (Model != null)
-                            {
-                                foreach (var worker in Model)
-                                {
-
-                                    var barCodeData = (worker.WorkerInfo != null) ? worker.WorkerInfo.BarCodeData : "Not Inserted";
-                                    var price = (worker.WorkerInfo != null) ? worker.WorkerInfo.Price.ToString() : "Not Inserted";
-                                    <tr>
-                                        <td>@worker.Roll</td>
-                                        <td>@worker.User</td>
-                                        <td>@worker.Name</td>
-                                        <td>@worker.DateOfBirth.ToShortDateString()</td>
-                                        <td>@worker.PermanentDistrict</td>
-                                        <td>@worker.Quota</td>
-                                        <td>@barCodeData</td>
-                                        <td>@price</td>
-                                    </tr>
-                                }
-                            }
-                        }
-                    </tbody>
-                </table>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Click the button to scan their Bar Code</h3>
+                    <a asp-action="Index" asp-area="Admin" asp-controller="Home" type=" button" class="btn btn-primary">Scan Barcodes</a>
+                </div>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
+        <!-- /.card-body -->
+
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h1>Number of scanned workers whose price has not been inserted: @Model.PriceNotInsertedWorkersCount</h1>
+            </div>
+            <!-- /.card-header -->
+            <div class="card">
+                <div class="card-body">
+                    <h3>Click the button to insert price</h3>
+                    <a asp-action="InsertPriceList" asp-area="Admin" asp-controller="Home" type=" button" class="btn btn-primary">Insert Price</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
     </div>
+    <!-- /.card -->
+</div>*@
 </div>
 
 
 @section Scripts
-    {
-    <!-- DataTables -->
-    <script src="~/Admins/plugins/jquery/jquery.js"></script>
-    <script src="~/admins/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/admins/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="~/admins/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="~/admins/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="~/admins/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/searchpanes/2.1.0/js/dataTables.searchPanes.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-    <script>
-        $(function () {
+{
 
-            //$('#dashboard thead tr')
-            //    .clone(true)
-            //    .addClass('filters')
-            //    .appendTo('#dashboard thead');
-            $('#dashboard tfoot th').each(function () {
-                var title = $(this).text();
-                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-            });
-
-
-            $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
-                var found = false;
-
-                var table = $('#example').DataTable();
-                var row = table.row(dataIndex).node();
-                var checked = $('input[name="chk_box"]').prop('checked');
-
-                if (checked && $(row).find('input').prop('checked')) {
-                    return false;
-                }
-
-                return true;
-
-            });
-
-            var table = $('#dashboard').DataTable({
-                "processing": true,
-
-                dom: 'P<"clear">lfrtip B<"clear">lfrtip',
-                searchPanes: {
-                    viewTotal: true
-                },
-
-                initComplete: function () {
-                    var api = this.api();
-                    count = 0;
-                    $('.thead2', api.table().header()).each(function (i) {
-                        if ($(this).hasClass('filterhead')) {
-                            var column = api.column(i);
-                            var title = column.header();
-                            //replace spaces with dashes
-                            title = $(title).html().replace(/[W]/g, '-');
-
-                            var select = $('<select id="' + title + '" class="select2" ></select>')
-                                .appendTo($(this).empty())
-                                .on('change', function () {
-                                    //Get the "text" property from each selected data
-                                    //regex escape the value and store in array
-                                    var data = $.map($(this).select2('data'), function (value, key) {
-                                        return value.text ? '^' + $.fn.dataTable.util.escapeRegex(value.text) + '$' : null;
-                                    });
-
-                                    //if no data selected use ""
-                                    if (data.length === 0) {
-                                        data = [""];
-                                    }
-
-                                    //join array into string with regex or (|)
-                                    var val = data.join('|');
-
-                                    //search for the option(s) selected
-                                    column
-                                        .search(val ? val : '', true, false)
-                                        .draw();
-                                });
-
-                            column.data().unique().sort().each(function (d, j) {
-                                select.append('<option value="' + d + '">' + d + '</option>');
-                            });
-
-                            //use column title as selector and placeholder
-                            $('#' + title).select2({
-                                multiple: true,
-                                closeOnSelect: false,
-                                placeholder: "Select a " + title
-                            });
-
-                            //initially clear select otherwise first option is selected
-                            $('.select2').val(null).trigger('change');
-                        }
-                    });
-                },
-
-
-                orderCellsTop: true,
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ],
-                "columnDefs": [
-                    { "className": "dt-center", "targets": "_all" }
-                ],
-                "oLanguage": {
-                    "sSearch": "<b>Search By Roll:</b>"
-                },
-                aLengthMenu: [
-                    [5, 10, 25, 50, 100, 200, 500, 1000],
-                    [5, 10, 25, 50, 100, 200, 500, 1000]
-                ],
-            });
-        });
-
-        table.columns().every(function () {
-            var that = this;
-            $('input', this.footer()).on('keyup change', function () {
-                if (that.search() !== this.value) {
-                    that
-                        .search(this.value)
-                        .draw();
-                }
-            });
-        });
-
-        $('input:checkbox').on('change', function () {
-
-            // Run the search plugin
-            table.draw();
-
-        });
-    </script>
 }

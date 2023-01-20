@@ -20,6 +20,8 @@ namespace ProductManagement.Web
 
             builder.RegisterType<DashBoardModel>().AsSelf();
 
+            builder.RegisterType<ReportModel>().AsSelf();
+
             base.Load(builder);
         }
     }
