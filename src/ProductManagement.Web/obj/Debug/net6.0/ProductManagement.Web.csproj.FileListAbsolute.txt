@@ -635,3 +635,4 @@ D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Bouncy
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySqlConnector.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Devskill\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_ReportLayout.cshtml.rz.scp.css

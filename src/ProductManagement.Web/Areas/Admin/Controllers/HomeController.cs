@@ -30,6 +30,19 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Report()
+        {
+            var model = _scope.Resolve<DashBoardModel>();
+            IList<Worker> list = new List<Worker>();
+            var Elist = await model.GetWorkersList();
+            foreach (var e in Elist)
+            {
+                list.Add(e);
+            }
+
+            return View(list);
+        }
+
         public async Task<IActionResult> DashBoard()
         {
             var model = _scope.Resolve<DashBoardModel>();
