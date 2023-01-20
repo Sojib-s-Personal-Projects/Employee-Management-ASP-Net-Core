@@ -8,7 +8,6 @@ namespace Infrastructure.BusinessObjects
 {
     public class Worker
     {
-        public Guid Id { get; set; }
         public string PostName { get; set; }
         public long Roll { get; set; }
         public string User { get; set; }

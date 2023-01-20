@@ -23,6 +23,7 @@
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2",
           "Serilog.AspNetCore": "6.0.1",
           "Serilog.Sinks.MSSqlServer": "6.0.0",
+          "Serilog.Sinks.MySQL": "4.6.0",
           "Swashbuckle.AspNetCore": "6.3.0"
         },
         "runtime": {
@@ -1996,6 +1997,21 @@
           }
         }
       },
+      "Serilog.Sinks.MySQL/4.6.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "MySql.Data": "8.0.31",
+          "Newtonsoft.Json": "13.0.1",
+          "Serilog": "2.12.0",
+          "System.Data.Common": "4.3.0"
+        },
+        "runtime": {
+          "lib/net5.0/Serilog.Sinks.MySQL.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
       "Serilog.Sinks.PeriodicBatching/3.1.0": {
         "dependencies": {
           "Serilog": "2.12.0"
@@ -2216,6 +2232,18 @@
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Data.Common/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
         }
       },
       "System.Diagnostics.Debug/4.3.0": {
@@ -3868,6 +3896,13 @@
       "path": "serilog.sinks.mssqlserver/6.0.0",
       "hashPath": "serilog.sinks.mssqlserver.6.0.0.nupkg.sha512"
     },
+    "Serilog.Sinks.MySQL/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S/tRC3WbJVTJcY5u/a/uPf/OxWJnDuuLfOqyslHCYsYpSN/NED4CZpJK6zmu3w5WizwPGgffQort3UjGROFi1w==",
+      "path": "serilog.sinks.mysql/4.6.0",
+      "hashPath": "serilog.sinks.mysql.4.6.0.nupkg.sha512"
+    },
     "Serilog.Sinks.PeriodicBatching/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -4000,6 +4035,13 @@
       "sha512": "sha512-DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
+    },
+    "System.Data.Common/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
+      "path": "system.data.common/4.3.0",
+      "hashPath": "system.data.common.4.3.0.nupkg.sha512"
     },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",

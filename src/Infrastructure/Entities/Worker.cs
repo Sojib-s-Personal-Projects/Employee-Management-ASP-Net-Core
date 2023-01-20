@@ -1,10 +1,9 @@
 ﻿namespace Infrastructure.Entities
 {
-    public class Worker : IEntity<Guid>
+    public class Worker : IEntity<long>
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string PostName { get; set; }
-        public long Roll { get; set; }
         public string User { get; set; }
         public string Name { get; set; }
         public string FathersName { get; set; }

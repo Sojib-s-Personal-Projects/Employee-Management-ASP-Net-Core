@@ -5,7 +5,7 @@ using System.Data;
 
 namespace Infrastructure.Repositories
 {
-    public class WorkerRepository : Repository<Worker, Guid>, IWorkerRepository
+    public class WorkerRepository : Repository<Worker, long>, IWorkerRepository
     {
         private readonly IApplicationDbContext _dbContext;
 
@@ -18,7 +18,7 @@ namespace Infrastructure.Repositories
             int pageSize, string searchText, string orderby)
         {
             (IList<Worker> data, int total, int totalDisplay) results =
-                GetDynamic(x => x.Roll.ToString().Contains(searchText) || x.Name.Contains(searchText) || x.WorkerInfo != null, orderby,
+                GetDynamic(x => x.Id.ToString().Contains(searchText) || x.Name.Contains(searchText) || x.WorkerInfo != null, orderby,
                 "WorkerInfo", pageIndex, pageSize, true);
 
             return results;
@@ -28,7 +28,7 @@ namespace Infrastructure.Repositories
             int pageSize, string searchText, string orderby)
         {
             (IList<Worker> data, int total, int totalDisplay) results =
-                GetDynamic(x => x.Roll.ToString().Contains(searchText), orderby,
+                GetDynamic(x => x.Id.ToString().Contains(searchText), orderby,
                 "WorkerInfo", pageIndex, pageSize, true);
 
             return results;

@@ -67,11 +67,10 @@ namespace Infrastructure.Services
                 {
                     workers.Add(new WorkerBO
                     {
-                        Id = workerEO.Id,
                         Name = workerEO.Name,
                         FathersName = workerEO.FathersName,
                         MothersName = workerEO.MothersName,
-                        Roll = workerEO.Roll,
+                        Roll = workerEO.Id,
                         User = workerEO.User,
                         PermanentDistrict = workerEO.PermanentDistrict,
                         PostName = workerEO.PostName,

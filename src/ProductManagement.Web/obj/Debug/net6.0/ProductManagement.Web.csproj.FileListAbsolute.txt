@@ -636,3 +636,4 @@ D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Micros
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\MySqlConnector.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 D:\Devskill\Product-Management\src\ProductManagement.Web\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_ReportLayout.cshtml.rz.scp.css
+D:\Devskill\Product-Management\src\ProductManagement.Web\bin\Debug\net6.0\Serilog.Sinks.MySQL.dll

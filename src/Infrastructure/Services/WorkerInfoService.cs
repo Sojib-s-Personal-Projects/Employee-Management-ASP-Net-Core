@@ -27,7 +27,7 @@ namespace Infrastructure.Services
         public async Task InsertData(WorkerInfoBO model)
         {
             var workerInfoEO=_mapper.Map<WorkerInfoEO>(model);
-            var worker=_applicationUnitOfWork.Workers.Get(x => x.Roll == workerInfoEO.Roll, "").Select(s => s).FirstOrDefault();
+            var worker=_applicationUnitOfWork.Workers.Get(x => x.Id == workerInfoEO.Roll, "").Select(s => s).FirstOrDefault();
             workerInfoEO.Worker = worker;
 
             var workerInfoCount = _applicationUnitOfWork.WorkersInformation.Get(x => x.Roll == workerInfoEO.Roll, "").Count;

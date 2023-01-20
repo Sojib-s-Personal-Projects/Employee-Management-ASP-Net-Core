@@ -2816,6 +2816,22 @@
           }
         }
       },
+      "Serilog.Sinks.MySQL/4.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "MySql.Data": "8.0.29",
+          "Newtonsoft.Json": "13.0.1",
+          "Serilog": "2.11.0",
+          "System.Data.Common": "4.3.0"
+        },
+        "compile": {
+          "lib/net5.0/Serilog.Sinks.MySQL.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Serilog.Sinks.MySQL.dll": {}
+        }
+      },
       "Serilog.Sinks.PeriodicBatching/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -3137,6 +3153,27 @@
           "ref/netstandard1.3/System.Console.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "System.Data.Common/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.2/System.Data.Common.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.2/System.Data.Common.dll": {}
         }
       },
       "System.Diagnostics.Debug/4.3.0": {
@@ -8174,6 +8211,20 @@
         "serilog.sinks.mssqlserver.nuspec"
       ]
     },
+    "Serilog.Sinks.MySQL/4.6.0": {
+      "sha512": "S/tRC3WbJVTJcY5u/a/uPf/OxWJnDuuLfOqyslHCYsYpSN/NED4CZpJK6zmu3w5WizwPGgffQort3UjGROFi1w==",
+      "type": "package",
+      "path": "serilog.sinks.mysql/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net452/Serilog.Sinks.MySQL.dll",
+        "lib/net5.0/Serilog.Sinks.MySQL.dll",
+        "serilog.sinks.mysql.4.6.0.nupkg.sha512",
+        "serilog.sinks.mysql.nuspec"
+      ]
+    },
     "Serilog.Sinks.PeriodicBatching/3.1.0": {
       "sha512": "NDWR7m3PalVlGEq3rzoktrXikjFMLmpwF0HI4sowo8YDdU+gqPlTHlDQiOGxHfB0sTfjPA9JjA7ctKG9zqjGkw==",
       "type": "package",
@@ -8693,6 +8744,57 @@
         "ref/xamarinwatchos10/_._",
         "system.console.4.3.0.nupkg.sha512",
         "system.console.nuspec"
+      ]
+    },
+    "System.Data.Common/4.3.0": {
+      "sha512": "lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
+      "type": "package",
+      "path": "system.data.common/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net451/System.Data.Common.dll",
+        "lib/netstandard1.2/System.Data.Common.dll",
+        "lib/portable-net451+win8+wp8+wpa81/System.Data.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net451/System.Data.Common.dll",
+        "ref/netstandard1.2/System.Data.Common.dll",
+        "ref/netstandard1.2/System.Data.Common.xml",
+        "ref/netstandard1.2/de/System.Data.Common.xml",
+        "ref/netstandard1.2/es/System.Data.Common.xml",
+        "ref/netstandard1.2/fr/System.Data.Common.xml",
+        "ref/netstandard1.2/it/System.Data.Common.xml",
+        "ref/netstandard1.2/ja/System.Data.Common.xml",
+        "ref/netstandard1.2/ko/System.Data.Common.xml",
+        "ref/netstandard1.2/ru/System.Data.Common.xml",
+        "ref/netstandard1.2/zh-hans/System.Data.Common.xml",
+        "ref/netstandard1.2/zh-hant/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/System.Data.Common.dll",
+        "ref/portable-net451+win8+wp8+wpa81/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/de/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/es/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/fr/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/it/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ja/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ko/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ru/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/zh-hans/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/zh-hant/System.Data.Common.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.data.common.4.3.0.nupkg.sha512",
+        "system.data.common.nuspec"
       ]
     },
     "System.Diagnostics.Debug/4.3.0": {
@@ -12277,6 +12379,7 @@
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.2",
       "Serilog.AspNetCore >= 6.0.1",
       "Serilog.Sinks.MSSqlServer >= 6.0.0",
+      "Serilog.Sinks.MySQL >= 4.6.0",
       "Swashbuckle.AspNetCore >= 6.3.0"
     ]
   },
@@ -12378,6 +12481,10 @@
           "Serilog.Sinks.MSSqlServer": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "Serilog.Sinks.MySQL": {
+            "target": "Package",
+            "version": "[4.6.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

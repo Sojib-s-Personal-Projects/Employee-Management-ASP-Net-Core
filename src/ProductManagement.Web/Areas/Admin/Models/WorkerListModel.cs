@@ -26,7 +26,7 @@ namespace ProductManagement.Web.Areas.Admin.Models
                 model.PageIndex,
                 model.PageSize,
                 model.SearchText,
-                model.GetSortText(new string[] { "Roll", "Id" }));
+                model.GetSortText(new string[] { "Id", "User" }));
 
             return new
             {
@@ -36,7 +36,7 @@ namespace ProductManagement.Web.Areas.Admin.Models
                             select new string[]
                             {
                                     record.Roll.ToString(),
-                                    record.Id.ToString()
+                                    record.User
                             }
                         ).ToArray()
             };

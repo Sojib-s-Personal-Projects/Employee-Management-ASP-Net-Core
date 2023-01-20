@@ -77,7 +77,7 @@ namespace ProductManagement.Web.Controllers
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                        return RedirectToAction("DashBoard", "Home", new { area = "Admin" });
                     }
                 }
 
@@ -92,7 +92,7 @@ namespace ProductManagement.Web.Controllers
         public async Task<IActionResult> Login(string? returnUrl = null)
         {
             if (User.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Home", new { area = "Admin" });
+                return RedirectToAction("DashBoard", "Home", new { area = "Admin" });
 
             var model = _scope.Resolve<LoginModel>();
 
@@ -127,7 +127,7 @@ namespace ProductManagement.Web.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    return RedirectToAction("DashBoard", "Home", new { area = "Admin" });
                 }
                 if (result.RequiresTwoFactor)
                 {

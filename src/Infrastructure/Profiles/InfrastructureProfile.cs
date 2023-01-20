@@ -14,6 +14,7 @@ namespace Infrastructure.Profiles
                .ReverseMap();
 
             CreateMap<WorkerBO, WorkerEO>()
+               .ForMember(dest => dest.Id, src => src.MapFrom(x => x.Roll))
                .ReverseMap();
         }
     }

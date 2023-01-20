@@ -34,7 +34,11 @@ namespace Infrastructure.DbContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Worker>()
-                .HasKey(w => w.Roll);
+                .HasKey(w => w.Id);
+
+            modelBuilder.Entity<Worker>()
+                .Property(w => w.Id)
+                .HasColumnName("Roll");
 
             modelBuilder.Entity<Worker>()
                 .HasData(new WorkerSeed().Workers);

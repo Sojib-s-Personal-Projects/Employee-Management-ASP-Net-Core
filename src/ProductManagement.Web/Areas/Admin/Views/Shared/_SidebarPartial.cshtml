@@ -9,7 +9,7 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a asp-area="Admin" asp-controller="Home" asp-action="DashBoard" class="brand-link">
         @*<img src="~/app/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">*@
         <span class="brand-text font-weight-light">Project</span>
     </a>
@@ -20,7 +20,7 @@
             <div class="info">
                 @if (@user != null)
                 {
-                    <a asp-area="App" asp-controller="Settings" asp-action="Index" class="d-block">@user.Name</a>
+                    <a asp-area="Admin" asp-controller="Home" asp-action="DashBoard" class="d-block">@user.Name</a>
                 }
             </div>
         </div>
@@ -61,14 +61,6 @@
                         </p>
                     </a>
                 </dev>
-                @*<li class="nav-item">
-                <a asp-action="Index" asp-area="App" asp-controller="Home" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                Application
-                </p>
-                </a>
-                </li>*@
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
