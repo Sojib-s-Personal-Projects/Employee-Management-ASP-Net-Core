@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Infrastructure.Exceptions;
 using Infrastructure.UnitOfWorks;
+using System.Runtime.CompilerServices;
 using WorkerBO = Infrastructure.BusinessObjects.Worker;
 using WorkerEO = Infrastructure.Entities.Worker;
 
@@ -79,7 +80,6 @@ namespace Infrastructure.Services
                     });
                 }
             }
-            results.totalDisplay = workers.Count();
             return (results.total, results.totalDisplay, workers);
         }
 

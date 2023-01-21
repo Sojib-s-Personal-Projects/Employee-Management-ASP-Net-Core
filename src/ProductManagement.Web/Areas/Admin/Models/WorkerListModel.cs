@@ -26,7 +26,7 @@ namespace ProductManagement.Web.Areas.Admin.Models
                 model.PageIndex,
                 model.PageSize,
                 model.SearchText,
-                model.GetSortText(new string[] { "Id", "User" }));
+                model.GetSortText(new string[] {"Id"}));
 
             return new
             {

@@ -49,6 +49,14 @@ namespace Infrastructure.Services
 
         public void InsertPrice(WorkerInfoBO workerInfoBO)
         {
+            int i;
+            var hasStringValue = int.TryParse(workerInfoBO.Price.ToString(), out i);
+
+            if(workerInfoBO.Price==null || !hasStringValue)
+            {
+                throw new PriceNullOrStringException("This value is not valid for price");
+            }
+
             var workerInfoEO = _applicationUnitOfWork.WorkersInformation.Get(x=>x.Roll== workerInfoBO.Roll,"Worker").FirstOrDefault();
             workerInfoEO.Price = workerInfoBO.Price;
             _applicationUnitOfWork.Save();

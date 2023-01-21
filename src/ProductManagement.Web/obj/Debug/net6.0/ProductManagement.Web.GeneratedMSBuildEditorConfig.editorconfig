@@ -9,137 +9,137 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProductManagement.Web
 build_property.RootNamespace = ProductManagement.Web
-build_property.ProjectDir = D:\Devskill\Product-Management\src\ProductManagement.Web\
+build_property.ProjectDir = D:\Devskill\Product-Management (2)\Product-Management\src\ProductManagement.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Devskill\Product-Management\src\ProductManagement.Web
+build_property.MSBuildProjectDirectory = D:\Devskill\Product-Management (2)\Product-Management\src\ProductManagement.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/DashBoard.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/DashBoard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxEYXNoQm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Index.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/InsertPrice.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/InsertPrice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbnNlcnRQcmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/InsertPriceList.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/InsertPriceList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbnNlcnRQcmljZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Price.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Price.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxQcmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Report.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/Report.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/UpdateDetails.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Home/UpdateDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxVcGRhdGVEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/Error.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_FooterPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_FooterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9Gb290ZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_LoginPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_NavbarPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_NavbarPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9OYXZiYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ReportThemeScriptsPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ReportThemeScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9SZXBvcnRUaGVtZVNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ResponsePartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ResponsePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9SZXNwb25zZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_SidebarPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_SidebarPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TaWRlYmFyUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_StyleSheetLinkPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_StyleSheetLinkPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TdHlsZVNoZWV0TGlua1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ThemeScriptsPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ThemeScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9UaGVtZVNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Account/Login.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Account/Register.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Home/Index.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Home/Privacy.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Shared/Error.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Shared/_LoginPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/_ViewImports.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/_ViewStart.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_Layout.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-t42lqg35fd
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ReportLayout.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Areas/Admin/Views/Shared/_ReportLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9SZXBvcnRMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2urckaw2tm
 
-[D:/Devskill/Product-Management/src/ProductManagement.Web/Views/Shared/_Layout.cshtml]
+[D:/Devskill/Product-Management (2)/Product-Management/src/ProductManagement.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jn1ulcfwpt

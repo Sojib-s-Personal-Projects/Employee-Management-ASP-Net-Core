@@ -11,19 +11,10 @@
     <!-- Brand Logo -->
     <a asp-area="Admin" asp-controller="Home" asp-action="DashBoard" class="brand-link">
         @*<img src="~/app/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">*@
-        <span class="brand-text font-weight-light">Project</span>
+        <span class="brand-text font-weight-light">@user.Name</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="info">
-                @if (@user != null)
-                {
-                    <a asp-area="Admin" asp-controller="Home" asp-action="DashBoard" class="d-block">@user.Name</a>
-                }
-            </div>
-        </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

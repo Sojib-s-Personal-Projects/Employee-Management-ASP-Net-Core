@@ -12389,11 +12389,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Devskill\\Product-Management\\src\\ProductManagement.Web\\ProductManagement.Web.csproj",
+      "projectUniqueName": "D:\\Devskill\\Product-Management (2)\\Product-Management\\src\\ProductManagement.Web\\ProductManagement.Web.csproj",
       "projectName": "ProductManagement.Web",
-      "projectPath": "D:\\Devskill\\Product-Management\\src\\ProductManagement.Web\\ProductManagement.Web.csproj",
+      "projectPath": "D:\\Devskill\\Product-Management (2)\\Product-Management\\src\\ProductManagement.Web\\ProductManagement.Web.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "D:\\Devskill\\Product-Management\\src\\ProductManagement.Web\\obj\\",
+      "outputPath": "D:\\Devskill\\Product-Management (2)\\Product-Management\\src\\ProductManagement.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12410,8 +12410,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Devskill\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\Devskill\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj"
+            "D:\\Devskill\\Product-Management (2)\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\Devskill\\Product-Management (2)\\Product-Management\\src\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

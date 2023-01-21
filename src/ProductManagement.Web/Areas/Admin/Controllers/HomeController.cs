@@ -155,6 +155,16 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
 
                 return View(model);
             }
+            catch (PriceNullOrStringException ioe)
+            {
+                _logger.LogError(ioe, ioe.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = ioe.Message,
+                    Type = ResponseTypes.Danger
+                });
+            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
