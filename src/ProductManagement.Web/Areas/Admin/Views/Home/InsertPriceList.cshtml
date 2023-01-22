@@ -92,7 +92,6 @@
             var prices = $('#prices').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "dom": 'rtip',
                 "ajax": {
                     "url": "/admin/home/GetWorkersPriceInforation",
                 },
@@ -103,8 +102,7 @@
                     },
                 ],
                 "oLanguage": {
-                    "sSearch": "<b>Search By Roll:</b>",
-                    "sEmptyTable": "My Custom Message On Empty Table"
+                    "sSearch": "<b>Search By Roll or Barcode:</b>",
                 },
             });
 
