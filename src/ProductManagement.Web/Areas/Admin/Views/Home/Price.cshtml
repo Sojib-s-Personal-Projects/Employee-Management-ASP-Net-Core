@@ -57,6 +57,34 @@
     </div>
 </div>
 
+<div class="row d-flex justify-content-center">
+    <div class="col-8">
+        <div class="card card-primary card-outline" id="" style="">
+            <!-- /.card-header -->
+            <div class="card-header">
+                <h1>You can enter multiple prices at a time and submit all together</h1>
+            </div>
+            <div class="card-body" id="priceTable">
+                <table id="prices" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Bar Code Data</th>
+                            <th class="text-center">Roll</th>
+                            <th class="text-center">Price</th>
+                        </tr>
+                    </thead>
+                </table>
+                <button type="" class="btn btn-primary" id="submit">
+                    Submit Prices
+                </button>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+<partial name="_ModalPartial" />
+
 @section Scripts
 {
     <!-- DataTables -->
@@ -71,7 +99,6 @@
                     "serverSide": true,
                     "dom": 'rtip',
                     "bInfo": false, //Dont display info e.g. "Showing 1 to 4 of 4 entries"
-                    destroy: true,
                     "ajax": {
                         "url": "/admin/home/GetWorkersInformationData",
                     },
@@ -97,6 +124,36 @@
                 var val = $("#barCode").val();
                 table.search(val).draw();
                 $("#barCodeCard").show();
+            });
+
+            var prices = $('#prices').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "/admin/home/GetWorkersPriceInforation",
+                },
+                "columnDefs": [
+                    {
+                        "className": "dt-center",
+                        "targets": "_all"
+                    },
+                ],
+                "oLanguage": {
+                    "sSearch": "<b>Search By Roll or Barcode:</b>",
+                },
+            });
+
+            $('#priceTable').on('click', '#submit', function (event) {
+                var id = $(this).data("id");
+                var modal = $("#modal-default");
+                modal.find('.modal-body p').text('Are you sure, you want to submit the prices?');
+                $("#submitId").val(id);
+                $("#submitForm").attr("action", "/admin/home/SubmitPrices");
+                modal.modal('show');
+            });
+
+            $("#submitButton").click(function () {
+                $("#submitForm").submit();
             });
         });
     </script>

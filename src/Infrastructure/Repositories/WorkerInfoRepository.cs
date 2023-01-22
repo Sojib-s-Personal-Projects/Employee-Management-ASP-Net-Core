@@ -17,7 +17,17 @@ namespace Infrastructure.Repositories
             int pageSize, string searchText, string orderby)
         {
             (IList<WorkerInfo> data, int total, int totalDisplay) results =
-                GetDynamic(x => x.BarCodeData==searchText, orderby,
+                GetDynamic(x => x.BarCodeData == searchText, orderby,
+                "Worker", pageIndex, pageSize, true);
+
+            return results;
+        }
+
+        public (IList<WorkerInfo> data, int total, int totalDisplay) GetWorkersPriceInformation(int pageIndex,
+            int pageSize, string searchText, string orderby)
+        {
+            (IList<WorkerInfo> data, int total, int totalDisplay) results =
+                GetDynamic(x => x.BarCodeData.Contains(searchText)|| x.Roll.ToString().Contains(searchText), orderby,
                 "Worker", pageIndex, pageSize, true);
 
             return results;

@@ -80,6 +80,7 @@ namespace Infrastructure.Services
                     });
                 }
             }
+            results.totalDisplay = workers.Count;
             return (results.total, results.totalDisplay, workers);
         }
 

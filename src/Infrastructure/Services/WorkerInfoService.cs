@@ -10,6 +10,7 @@ namespace Infrastructure.Services
     {
         private readonly IApplicationUnitOfWork _applicationUnitOfWork;
         private readonly IMapper _mapper;
+        private static IList<WorkerInfoBO> workersPriceInfo;
 
         public WorkerInfoService(IApplicationUnitOfWork applicationUnitOfWork,IMapper mapper)
         {
@@ -71,7 +72,7 @@ namespace Infrastructure.Services
             IList<WorkerInfoBO> workersInfo = new List<WorkerInfoBO>();
             foreach (WorkerInfoEO workerInfoEO in results.data)
             {
-                if (workerInfoEO.Price == null)
+                if (workerInfoEO.Price == null || workerInfoEO.PriceConfirmed==false)
                 {
                     workersInfo.Add(new WorkerInfoBO
                     {
@@ -79,10 +80,37 @@ namespace Infrastructure.Services
                         Roll = workerInfoEO.Roll,
                         Id = workerInfoEO.Id,
                         Price = workerInfoEO.Price,
+                        PriceConfirmed = workerInfoEO.PriceConfirmed
                     });
                 }
             }
 
+            results.totalDisplay = workersInfo.Count();
+            return (results.total, results.totalDisplay, workersInfo);
+        }
+
+        public (int total, int totalDisplay, IList<WorkerInfoBO> records) GetWorkersPriceInformation(int pageIndex,
+            int pageSize, string searchText, string orderby)
+        {
+            (IList<WorkerInfoEO> data, int total, int totalDisplay) results = _applicationUnitOfWork
+                .WorkersInformation.GetWorkersPriceInformation(pageIndex, pageSize, searchText, orderby);
+
+            IList<WorkerInfoBO> workersInfo = new List<WorkerInfoBO>();
+            foreach (WorkerInfoEO workerInfoEO in results.data)
+            {
+                if (workerInfoEO.Price != null && workerInfoEO.PriceConfirmed == false)
+                {
+                    workersInfo.Add(new WorkerInfoBO
+                    {
+                        BarCodeData = workerInfoEO.BarCodeData,
+                        Roll = workerInfoEO.Roll,
+                        Id = workerInfoEO.Id,
+                        Price = workerInfoEO.Price,
+                        PriceConfirmed=workerInfoEO.PriceConfirmed
+                    });
+                }
+            }
+            workersPriceInfo = workersInfo;
             results.totalDisplay = workersInfo.Count();
             return (results.total, results.totalDisplay, workersInfo);
         }
@@ -104,12 +132,26 @@ namespace Infrastructure.Services
                         Roll = workerInfoEO.Roll,
                         Id = workerInfoEO.Id,
                         Price = workerInfoEO.Price,
+                        PriceConfirmed = workerInfoEO.PriceConfirmed
                     });
                 }
             }
 
             results.totalDisplay = workersInfo.Count();
             return (results.total, results.totalDisplay, workersInfo);
+        }
+
+        public async Task SubmitPrices()
+        {
+            if (workersPriceInfo.Count==0)
+                throw new PriceNullOrStringException("There are no prices inserted");
+
+            foreach(var workerInfoBO in workersPriceInfo)
+            {
+                var workerInfoEO = _applicationUnitOfWork.WorkersInformation.Get(x => x.Roll == workerInfoBO.Roll,"Worker").FirstOrDefault();
+                workerInfoEO.PriceConfirmed = true;
+                _applicationUnitOfWork.Save();
+            }
         }
     }
 }

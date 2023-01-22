@@ -40,6 +40,43 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             return View(workerList);
         }
 
+        public async Task<IActionResult> SubmitPrices()
+        {
+            try
+            {
+                var model = _scope.Resolve<WorkerInfoListModel>();
+                await model.SubmitPrices();
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = "Successfully Inserted Prices",
+                    Type = ResponseTypes.Success
+                }); 
+            }
+            catch (PriceNullOrStringException ioe)
+            {
+                _logger.LogError(ioe, ioe.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = ioe.Message,
+                    Type = ResponseTypes.Danger
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+
+                TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
+                {
+                    Message = "There was a problem in inserting prices",
+                    Type = ResponseTypes.Danger
+                });
+            }
+            return RedirectToAction(nameof(Price));
+
+        }
+
         public async Task<IActionResult> DashBoard()
         {
             var model = _scope.Resolve<DashBoardModel>();
@@ -145,7 +182,7 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             {
                 model.ResolveDependency(_scope);
 
-                model.InserPrice();
+                model.InsertPrice();
 
                 TempData.Put<ResponseModel>("ResponseMessage", new ResponseModel
                 {
@@ -198,6 +235,13 @@ namespace ProductManagement.Web.Areas.Admin.Controllers
             var dataTableModel = new DataTablesAjaxRequestModel(Request);
             var model = _scope.Resolve<WorkerInfoListModel>();
             return Json(model.GetPriceNotInsertedWorkersInformation(dataTableModel));
+        }
+
+        public async Task<JsonResult> GetWorkersPriceInforation()
+        {
+            var dataTableModel = new DataTablesAjaxRequestModel(Request);
+            var model = _scope.Resolve<WorkerInfoListModel>();
+            return Json(model.GetPagedWorkersPriceInforamation(dataTableModel));
         }
     }
 }

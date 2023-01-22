@@ -77,7 +77,7 @@ namespace ProductManagement.Web.Areas.Admin.Models
             }
         }
 
-        public void InserPrice()
+        public void InsertPrice()
         {
             var model = new WorkerInfo();
             model.Roll = Roll;
@@ -85,6 +85,7 @@ namespace ProductManagement.Web.Areas.Admin.Models
             model.Price = Price;
             model.Id = Id;
             model.Worker = Worker;
+            model.PriceConfirmed = false;
 
             _workerInfoService.InsertPrice(model);
         }

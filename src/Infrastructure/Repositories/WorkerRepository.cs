@@ -46,7 +46,7 @@ namespace Infrastructure.Repositories
 
         public async Task<int> GetPriceNotInsertedWorkersCount()
         {
-            return _dbContext.Workers.Where(x => x.WorkerInfo != null && x.WorkerInfo.Price==null).Count();
+            return _dbContext.Workers.Where(x => x.WorkerInfo != null && (x.WorkerInfo.Price==null||x.WorkerInfo.PriceConfirmed==false)).Count();
         }
     }
 }
