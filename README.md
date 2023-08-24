@@ -1,11 +1,14 @@
- A web application to manage employees in an organization. The 
-admin can scan a unique bar code against a particular employee and 
-store it in the database. Only after scanning an employee's barcode 
-can the admin insert or update their salary in the database. A report 
-can also be generated as a CSV or Excel sheet with the information of 
-those employees whose barcode and salary records are inserted in 
-the database. There are also options to filter the report by individual 
-column values.
-I have used the MySQL server to store and retrieve all the information. 
-As part of this project, I have also implemented the Entity Framework, 
-Unit of Work pattern, and Repository Pattern.
+# Employee Management System with ASP.NET Core
+• A feature-rich web application using ASP.NET Core to effectively manage employee data within an organization
+
+• Created a streamlined process for the admin to scan unique barcodes associated with employees, providing an efficient and accurate method of identification
+
+• Implemented a barcode scanning feature that facilitates data entry and updates by associating employees with their unique barcodes, enhancing accuracy and minimizing faults
+
+• Developed a robust reporting module enabling the generation of CSV or Excel sheets containing employee information, improving data analysis and reporting capabilities
+
+• Implemented advanced filtering options within the reporting feature, allowing administrators to customize reports based on specific column values, enhancing data visibility and analysis.
+
+## Tools Used
+ ASP.Net Core MVC, Entity Framework, Identity Framework, MySQL Server, JavaScript,
+JQuery
